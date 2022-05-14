@@ -1,0 +1,54 @@
+import Navbar from './navbar';
+// import Footer from '../components/footer';
+import Head from "next/head";
+import * as React from 'react';
+import useTranslation from 'next-translate/useTranslation'
+// import { useSession } from "next-auth/react";
+import { useRouter } from 'next/router';
+type Props = {
+    children: JSX.Element,
+  };
+export default function Layout({ children }: Props) {
+//   const {data:session, loading} = useSession();
+  const { t } = useTranslation()
+  const router = useRouter();
+  let navbarLinks = [
+    { url: '/portfolio', title: t("common:Portfolio") },
+    { url: '/contact', title: t("common:Contact") },
+    { url: '/resume', title: t("common:Resume") },
+  ];
+
+
+
+  let navbarLinksAdmin = [
+    { url: '/book', title: 'Забронировать' },
+    { url: '/admin/0/0', title: 'Расписание' },
+    { url: '/adm_location/0', title: 'Резервации' },
+    { url: '/contacts/0', title: 'Где находится?' },
+  ];
+  let navbarLinksSuper = [
+    { url: '/book', title: 'Забронировать' },
+    { url: '/admin/0/0', title: 'Расписание' },
+    { url: '/adm_location/0', title: 'Резервации' },
+    { url: '/contacts/0', title: 'Где находится?' },
+    { url: '/user_screen', title: 'Пользователи' },
+  ];
+//   let opt=session?{ url: '/logout', title: 'Выйти' }:{ url: '/login', title: 'Регистрация' }
+//   navbarLinks.push(opt);
+//   navbarLinksAdmin.push(opt);
+//   navbarLinksSuper.push(opt);
+  return (
+    <div>
+      <Head>
+
+      </Head>
+
+      <main id="mainPage" className="h-screen  bg-cover bg-center containerFont  relative text-lg overflow-hidden overflow-y-scroll" style={{backgroundImage:"url('/images/fon1.jpg')"}}>
+        {/* <Navbar navbarLinks={(session && session.user.status ==="admin")?navbarLinksAdmin:(session && session.user.status ==="super")?navbarLinksSuper:navbarLinks} path={router.asPath} /> */}
+        <Navbar navbarLinks={navbarLinks} path={router.asPath} locale={router.locale}/>
+        {children}
+        {/* <Footer /> */}
+      </main>
+    </div>
+  );
+}
