@@ -7,12 +7,12 @@ function contact() {
   const { t } = useTranslation()
   let router = useRouter();
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="flex min-h-screen flex-col items-center justify-center py-2 bg-lightBG dark:text-light dark:bg-darkBG">
     <Head>
       <title>{t('contact:Contact_page')}</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <main className="text-black">
+    <main >
     
     <div>contact</div>
  

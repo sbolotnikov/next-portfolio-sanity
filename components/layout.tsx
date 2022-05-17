@@ -1,4 +1,4 @@
-import Navbar from './navbar';
+import Navbar from './Navbar/navbar';
 // import Footer from '../components/footer';
 import Head from "next/head";
 import * as React from 'react';
@@ -13,9 +13,11 @@ export default function Layout({ children }: Props) {
   const { t } = useTranslation()
   const router = useRouter();
   let navbarLinks = [
-    { url: '/portfolio', title: t("common:Portfolio") },
-    { url: '/contact', title: t("common:Contact") },
-    { url: '/resume', title: t("common:Resume") },
+    { url: '/', title: t("common:Home"), icon:'/icons/navigation/home.svg' },  
+    { url: '/portfolio', title: t("common:Portfolio"), icon:'/icons/navigation/briefcase.svg' },
+    { url: '/contact', title: t("common:Contact"), icon:'/icons/navigation/inbox.svg' },
+    { url: '/resume', title: t("common:Resume"), icon:'/icons/navigation/resume.svg' },
+    { url: 'tel:+19179162840', title: t("common:Resume"), icon:'/icons/navigation/phone.svg' },
   ];
 
 
@@ -43,7 +45,9 @@ export default function Layout({ children }: Props) {
 
       </Head>
 
-      <main id="mainPage" className="h-screen  bg-cover bg-center containerFont  relative text-lg overflow-hidden overflow-y-scroll" style={{backgroundImage:"url('/images/fon1.jpg')"}}>
+      <main id="mainPage" className="h-screen  bg-cover bg-center containerFont  relative text-lg overflow-hidden overflow-y-scroll" 
+    //   style={{backgroundImage:"url('/images/fon1.jpg')"}}
+      >
         {/* <Navbar navbarLinks={(session && session.user.status ==="admin")?navbarLinksAdmin:(session && session.user.status ==="super")?navbarLinksSuper:navbarLinks} path={router.asPath} /> */}
         <Navbar navbarLinks={navbarLinks} path={router.asPath} locale={router.locale}/>
         {children}

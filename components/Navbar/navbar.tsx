@@ -1,95 +1,87 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import NavItem from './navItem';
+import * as React from 'react';
+import { ThemeContext } from '../../themeContext';
+import { ThemeContextType } from '../../@types/theme'
 // import { useSession } from 'next-auth/react';
 // import ContactMailIcon from '@mui/icons-material/ContactMail';
 
 type Props = {
-  navbarLinks: { url: string; title: string }[]
+  navbarLinks: { url: string; title: string; icon: string;}[]
   path: string
   locale?: string | undefined
 }
 
 const Navbar = ({ navbarLinks, path, locale }: Props) => {
-  const [style1, setStyle1] = useState({ display: 'none' })
+  const { darkTheme, setTheme } = React.useContext(ThemeContext) as ThemeContextType;
+  const [style1, setStyle1] = useState({ display: 'none' });
+  const [darkMode, setDarkMode] = useState(false)
   let router = useRouter()
-  // Determines if the "menu icon" was clicked or not. Note that this icon is only visible when the window width is small.
-  const [menuClicked, setMenuClicked] = useState(false)
+ 
   //   const { data: session, loading } = useSession();
-  const toggleMenuClick = () => {
-    setMenuClicked(!menuClicked)
-  }
+
 
 
   return (
-    <nav className="navbar">
-      <Link className="navbar__link" href={'/'}>
-        <span className="navbar__logo">
-          {path !== '/' ? (
-            <img
-              className="h-10 rounded bg-black"
-              src={'/icons/logo.svg'}
-              alt="call root"
-            />
-          ) : (
-            <div></div>
-          )}
-        </span>
-      </Link>
+    <nav className="navbar text-dark bg-lightBG dark:text-light dark:bg-darkBG">
+
       <ul
-        className={
-          menuClicked ? 'navbar__list navbar__list--active' : 'navbar__list'
+        className={ 'navbar__list'
         }
       >
-        {/* {nav.width()} */}
-        {menuClicked && (
-          <li className="navbar__item" key={'zeroitem'}>
-            <Link className="navbar__link bg-main-bg" href={'tel:9179162840'}>
-              <a
-                className="flex flex-row items-center justify-center"
-                onClick={() => {
-                  setMenuClicked(false)
-                }}
-              >
-                <div className="w-4">
-                  <img src={'/icons/call.svg'} alt="menu call" />
-                </div>
-                <span>+1(917)916-2840</span>
-              </a>
-            </Link>
-          </li>
-        )}
+ 
         {navbarLinks.map((item, index) => {
           return (
-            <li className="navbar__item" key={index}>
-              <Link className="navbar__link" href={item.url}>
-                <a
-                  onClick={() => {
-                    setMenuClicked(false)
-                  }}
-                >
-                  {item.title}
-                </a>
-              </Link>
+            <li className=" navbar__item " key={index}>
+                  <NavItem title={item.title} icon={item.icon} url={item.url} />
             </li>
           )
         })}
       </ul>
 
       <div className="navbar__right_span">
-        {/* {((session && session.user.status !== 'admin') || !session) && ( */}
-        <div className="navbar__menu_grid">
-          <Link href={'tel:+19179162840'}>
-            <img
-              className="bg-black object-fill"
-              src={'/icons/call.svg'}
-              alt="menu call"
-            />
-          </Link>
-        </div>
-        {/* )} */}
-        {/* {((session && session.user.status !== 'admin') || !session) && ( */}
 
+        {/* {((session && session.user.status !== 'admin') || !session) && ( */}
+        <button
+  id="theme-toggle"
+  type="button"
+  onClick={() =>{
+    setDarkMode(!darkMode);
+    !darkMode? document.getElementsByTagName('body')[0].classList.add('dark') :
+    document.getElementsByTagName('body')[0].classList.remove('dark') 
+    
+  }}
+  className=" text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+>
+  <svg
+    id="theme-toggle-dark-icon"
+    className="w-5 h-5"
+    fill="currentColor "
+    style={darkMode?{display: 'none'}:{display: 'block'}}
+    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+    ></path>
+  </svg>
+  <svg
+    id="theme-toggle-light-icon"
+    className="w-5 h-5" 
+    style={darkMode?{display: 'block'}:{display: 'none'}}
+    fill="currentColor"
+    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+      fillRule="evenodd"
+      clipRule="evenodd"
+    ></path>
+  </svg>
+</button>
         <div
           className="relative m-1 p-1 flex cursor-pointer flex-row rounded-sm border outline-none"
           onMouseEnter={(e) => {
@@ -153,15 +145,7 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
             </Link>
           </div>
         )} */}
-        {menuClicked ? (
-          <div className="navbar__menu" onClick={toggleMenuClick}>
-            <img src={'/icons/close.svg'} alt="menu close" />
-          </div>
-        ) : (
-          <div className="navbar__menu" onClick={toggleMenuClick}>
-            <img src={'/icons/burger.svg'} alt="menu burger" />
-          </div>
-        )}
+        
       </div>
     </nav>
   )

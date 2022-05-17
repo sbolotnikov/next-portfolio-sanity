@@ -9,12 +9,12 @@ const Home: NextPage = () => {
   let router = useRouter();
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="flex min-h-screen flex-col items-center justify-center py-2 text-dark bg-lightBG dark:text-light dark:bg-darkBG">
       <Head>
         <title>{t('common:Sergey Bolotnikov Portfolio')}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="text-black">
+      <main className="">
       
 
       <img className="h-6" src={`/icons/${router.locale}.svg`} alt={`${router.locale} flag`} />
