@@ -1,0 +1,411 @@
+#smScreenBg {
+  position: fixed;
+  top: 36px;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.75;
+  object-fit: cover;
+  z-index: -1;
+}
+.n {
+  opacity: 0;
+}
+.portrate {
+  opacity: 1;
+}
+
+@keyframes animate {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.glow {
+  color: yellow;
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+}
+#cloud {
+  text-align: center;
+  background-color: turquoise;
+  opacity: 0.75;
+  border-radius: 10px;
+  max-width: 800px;
+  top: 58vh;
+  height: 40vh;
+}
+#facebook {
+  background-color: transparent;
+  color: #4868ad;
+  padding: 0.1rem;
+}
+#linkedin {
+  background-color: transparent;
+  color: #0077ba;
+  padding: 0.1rem;
+}
+#github {
+  background-color: transparent;
+  color: black;
+  padding: 0.1rem;
+}
+.darkBG {
+  background-image: linear-gradient(
+      45deg,
+      rgb(73, 160, 30) 0%,
+      rgb(73, 160, 30) 6%,
+      rgb(88, 141, 55) 6%,
+      rgb(88, 141, 55) 11%,
+      rgb(103, 122, 81) 11%,
+      rgb(103, 122, 81) 55%,
+      rgb(118, 103, 106) 55%,
+      rgb(118, 103, 106) 81%,
+      rgb(132, 84, 131) 81%,
+      rgb(132, 84, 131) 83%,
+      rgb(147, 65, 156) 83%,
+      rgb(147, 65, 156) 92%,
+      rgb(162, 46, 182) 92%,
+      rgb(162, 46, 182) 95%,
+      rgb(177, 27, 207) 95%,
+      rgb(177, 27, 207) 100%
+    ),
+    linear-gradient(
+      112.5deg,
+      rgb(73, 160, 30) 0%,
+      rgb(73, 160, 30) 6%,
+      rgb(88, 141, 55) 6%,
+      rgb(88, 141, 55) 11%,
+      rgb(103, 122, 81) 11%,
+      rgb(103, 122, 81) 55%,
+      rgb(118, 103, 106) 55%,
+      rgb(118, 103, 106) 81%,
+      rgb(132, 84, 131) 81%,
+      rgb(132, 84, 131) 83%,
+      rgb(147, 65, 156) 83%,
+      rgb(147, 65, 156) 92%,
+      rgb(162, 46, 182) 92%,
+      rgb(162, 46, 182) 95%,
+      rgb(177, 27, 207) 95%,
+      rgb(177, 27, 207) 100%
+    ),
+    linear-gradient(
+      67.5deg,
+      rgb(73, 160, 30) 0%,
+      rgb(73, 160, 30) 6%,
+      rgb(88, 141, 55) 6%,
+      rgb(88, 141, 55) 11%,
+      rgb(103, 122, 81) 11%,
+      rgb(103, 122, 81) 55%,
+      rgb(118, 103, 106) 55%,
+      rgb(118, 103, 106) 81%,
+      rgb(132, 84, 131) 81%,
+      rgb(132, 84, 131) 83%,
+      rgb(147, 65, 156) 83%,
+      rgb(147, 65, 156) 92%,
+      rgb(162, 46, 182) 92%,
+      rgb(162, 46, 182) 95%,
+      rgb(177, 27, 207) 95%,
+      rgb(177, 27, 207) 100%
+    ),
+    linear-gradient(90deg, rgb(24, 15, 143), rgb(170, 57, 157));
+  background-blend-mode: overlay, overlay, overlay, normal;
+}
+.lightBG {
+  background-image: linear-gradient(
+      45deg,
+      rgb(240, 92, 24) 0%,
+      rgb(240, 92, 24) 18%,
+      rgb(239, 116, 49) 18%,
+      rgb(239, 116, 49) 33%,
+      rgb(238, 140, 73) 33%,
+      rgb(238, 140, 73) 38%,
+      rgb(237, 165, 98) 38%,
+      rgb(237, 165, 98) 53%,
+      rgb(235, 189, 122) 53%,
+      rgb(235, 189, 122) 56%,
+      rgb(234, 213, 147) 56%,
+      rgb(234, 213, 147) 83%,
+      rgb(233, 237, 171) 83%,
+      rgb(233, 237, 171) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgb(240, 92, 24) 0%,
+      rgb(240, 92, 24) 18%,
+      rgb(239, 116, 49) 18%,
+      rgb(239, 116, 49) 33%,
+      rgb(238, 140, 73) 33%,
+      rgb(238, 140, 73) 38%,
+      rgb(237, 165, 98) 38%,
+      rgb(237, 165, 98) 53%,
+      rgb(235, 189, 122) 53%,
+      rgb(235, 189, 122) 56%,
+      rgb(234, 213, 147) 56%,
+      rgb(234, 213, 147) 83%,
+      rgb(233, 237, 171) 83%,
+      rgb(233, 237, 171) 100%
+    ),
+    linear-gradient(
+      67.5deg,
+      rgb(240, 92, 24) 0%,
+      rgb(240, 92, 24) 18%,
+      rgb(239, 116, 49) 18%,
+      rgb(239, 116, 49) 33%,
+      rgb(238, 140, 73) 33%,
+      rgb(238, 140, 73) 38%,
+      rgb(237, 165, 98) 38%,
+      rgb(237, 165, 98) 53%,
+      rgb(235, 189, 122) 53%,
+      rgb(235, 189, 122) 56%,
+      rgb(234, 213, 147) 56%,
+      rgb(234, 213, 147) 83%,
+      rgb(233, 237, 171) 83%,
+      rgb(233, 237, 171) 100%
+    ),
+    linear-gradient(
+      22.5deg,
+      rgb(240, 92, 24) 0%,
+      rgb(240, 92, 24) 18%,
+      rgb(239, 116, 49) 18%,
+      rgb(239, 116, 49) 33%,
+      rgb(238, 140, 73) 33%,
+      rgb(238, 140, 73) 38%,
+      rgb(237, 165, 98) 38%,
+      rgb(237, 165, 98) 53%,
+      rgb(235, 189, 122) 53%,
+      rgb(235, 189, 122) 56%,
+      rgb(234, 213, 147) 56%,
+      rgb(234, 213, 147) 83%,
+      rgb(233, 237, 171) 83%,
+      rgb(233, 237, 171) 100%
+    ),
+    linear-gradient(90deg, rgb(243, 116, 163), rgb(252, 182, 229));
+  background-blend-mode: overlay, overlay, overlay, overlay, normal;
+}
+#HeaderContainer {
+  width: 100%;
+  border-bottom: 2px solid grey;
+  margin-bottom: 15px;
+}
+#Row1 {
+  background-color: white;
+  opacity: 0.8;
+  vertical-align: middle;
+}
+#SubRow {
+  display: inline-block;
+}
+#Brand {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #59aaa5;
+  opacity: 0.8;
+  width: 100%;
+}
+#SpaceTab {
+  color: transparent;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: rgb(231, 230, 230);
+}
+/* Navigation */
+nav {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px 0px;
+  background-color: transparent;
+}
+.NavP {
+  padding: 10px;
+}
+h4.card-text {
+  text-align: center;
+  color: white;
+  background-color: #59aaa5;
+  width: 100%;
+}
+.NavA:active,
+.NavA:hover {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 1em gray, 0 0 0.2em #59aaa5;
+}
+.NavA {
+  color: gray;
+  /* background-color: white; */
+  font-size: large;
+}
+.container {
+  border-top: 1px solid grey;
+  padding: 0px;
+  /* margin: 0px; */
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 100%;
+}
+/* change color scheme for the button from Contact form */
+.btn {
+  background-color: #59aaa5;
+  border: 1px solid #59aaa5;
+}
+
+.sec1 {
+  background-color: white;
+  margin: 20px 20px 40px 20px;
+  padding: 15px;
+  max-width: 717px;
+  border: 1px solid lightgray;
+  align-items: flex-start;
+}
+.sec2 {
+  background-color: white;
+  margin: 1rem 0rem 0rem 0rem;
+  padding: 1rem, 0rem, 0rem, 3rem;
+  /* max-width: 793px; */
+  position: absolute;
+  border: 1px solid lightgray;
+  align-items: flex-start;
+}
+.portfolioLabel {
+  background-color: #59aaa5;
+  opacity: 0.8;
+  color: white;
+  border-radius: 4px;
+}
+.head1 {
+  font-family: 'Times New Roman', Times, serif;
+  /* font-weight: 900; */
+  color: #59aaa5;
+  /* margin: 10px 10px 10px 0px; */
+}
+
+h4.card-text {
+  font-family: 'Times New Roman', Times, serif;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+.footerClass {
+  text-align: center;
+  padding: 25px;
+  background-color: #666666;
+  color: darkgrey;
+  border-top: 2mm solid #59aaa5;
+}
+* {
+  box-sizing: border-box;
+}
+.description {
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  margin: 50px auto;
+  width: 85%;
+  background: white;
+  border-radius: 5px;
+  align-items: flex-start;
+  padding: 1rem;
+  display: block;
+  align-self: flex-start;
+}
+.col-md-6 {
+  display: flex;
+  align-items: center;
+}
+.carousel-inner {
+  width: 95%;
+  /* height: 450px; */
+
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+}
+
+a.link {
+  position: relative;
+  display: block;
+  color: royalblue;
+  overflow: hidden;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(midnightblue),
+    color-stop(50%, midnightblue),
+    color-stop(50%, #59aaa5)
+  );
+  background: linear-gradient(
+    to right,
+    midnightblue,
+    midnightblue 50%,
+    #59aaa5 50%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  -webkit-transition: background-position 500ms ease;
+  transition: background-position 500ms ease;
+  text-decoration: none;
+}
+a:hover {
+  background-position: 0 100%;
+}
+a.linkHome {
+  position: relative;
+  display: block;
+  color: royalblue;
+  overflow: hidden;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(midnightblue),
+    color-stop(50%, midnightblue),
+    color-stop(50%, royalblue)
+  );
+  background: linear-gradient(
+    to right,
+    midnightblue,
+    midnightblue 50%,
+    royalblue 50%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  -webkit-transition: background-position 500ms ease;
+  transition: background-position 500ms ease;
+  text-decoration: none;
+}
+a:hover {
+  background-position: 0 100%;
+}
+
+.letterStyle {
+  position: absolute;
+  color: red;
+  top: -30vh;
+  font-family: 'Anton';
+  font-size: 10vw;
+  z-index: 400;
+  opacity: 1;
+}

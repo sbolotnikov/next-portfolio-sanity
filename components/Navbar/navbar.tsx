@@ -25,7 +25,7 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
 
 
   return (
-    <nav className="navbar text-dark bg-lightBG dark:text-light dark:bg-darkBG">
+    <nav className="navbar text-dark bg-lightBG/25 dark:text-light dark:bg-darkBG/25">
 
       <ul
         className={ 'navbar__list'
@@ -48,6 +48,7 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
   id="theme-toggle"
   type="button"
   onClick={() =>{
+    setTheme(!darkMode);
     setDarkMode(!darkMode);
     !darkMode? document.getElementsByTagName('body')[0].classList.add('dark') :
     document.getElementsByTagName('body')[0].classList.remove('dark') 

@@ -5,5 +5,9 @@
 @layer base {
     body {
         @apply bg-slate-100 text-black;
+        @font-face {
+            font-family: times, "Times New Roman";
+          }
+          
     }
 }

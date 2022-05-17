@@ -3,7 +3,8 @@
     "defaultLocale": "en",
     "pages":{
       "*":["common"],
-      "/contact":["contact"]
+      "/contact":["contact"],
+      "/resume":["resume"]
     }
   }
  

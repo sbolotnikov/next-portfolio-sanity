@@ -6,10 +6,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.6.2",
+    "animate.css": "^4.1.1",
+    "gsap": "^3.10.4",
     "next": "latest",
+    "next-connect": "^0.12.2",
     "next-translate": "^1.4.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-animated-css": "^1.2.1",
+    "react-dom": "^17.0.2",
+    "react-textfit": "^1.1.1"
   },
   "devDependencies": {
     "@types/node": "17.0.4",

@@ -4,6 +4,13 @@
   "Portfolio":"Portfolio",  
   "Contact":"Contact",
   "Resume":"Resume",
-  "name": "Name",
+  "Download":"Download",
+  "name": "Sergey Bolotnikov",
+  "Programmer":"Programmer",
+  "Address":"Address",
+  "Phone":"Phone",
+  "Email":"Email",
+  "Web":"Web",
+  "CallMe":"Call Me",
     "manish": "Manish"
   }
