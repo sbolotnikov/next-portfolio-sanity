@@ -50,15 +50,15 @@ const Home: NextPage = () => {
       var timerInterval = setInterval(function () { 
         if (!el) {
           
-          document.getElementById("cardImage1").style.animation="animate ease-in 8s normal 1";
-          document.getElementById("cardImage2").style.animation="animate linear 8s reverse 0.5s 1";
-          document.getElementById("cardImage1").style.opacity=0;
-          document.getElementById("cardImage2").style.opacity=1;
+          document.getElementById("cardImage1")!.style.animation="animate ease-in 8s normal 1";
+          document.getElementById("cardImage2")!.style.animation="animate linear 8s reverse 0.5s 1";
+          document.getElementById("cardImage1")!.style.opacity='0';
+          document.getElementById("cardImage2")!.style.opacity='1';
           clearInterval(timerInterval);
           
           return
         }
-        el.style.opacity = 1;
+        el.style.opacity = '1';
         el = el.nextElementSibling;
         i++;
 
