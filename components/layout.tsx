@@ -15,8 +15,8 @@ export default function Layout({ children }: Props) {
   const { darkTheme } = React.useContext(ThemeContext) as ThemeContextType;
   const { t } = useTranslation()
   React.useEffect(() => {
-      darkTheme.dark? document.getElementById("mainPage").classList.remove('lightBG'):document.getElementById("mainPage").classList.remove('darkBG')
-      darkTheme.dark? document.getElementById("mainPage").classList.add('darkBG'):document.getElementById("mainPage").classList.add('lightBG')
+      darkTheme.dark? document.getElementById("mainPage")?.classList.remove('lightBG'):document.getElementById("mainPage")?.classList.remove('darkBG')
+      darkTheme.dark? document.getElementById("mainPage")?.classList.add('darkBG'):document.getElementById("mainPage")?.classList.add('lightBG')
 }, [darkTheme.dark]);
   const router = useRouter();
   let navbarLinks = [
