@@ -44,11 +44,11 @@ const Home: NextPage = () => {
   }, []);
 
   function portrate() {
-    let el = document.getElementById("cardImage1")?.firstChild;
-    
+    let el = document.querySelectorAll<HTMLElement>("#cardImage1>path");
+     console.log(el)   
     let i = 0;
       var timerInterval = setInterval(function () { 
-        if (!el) {
+        if (!el[i]) {
           
           document.getElementById("cardImage1")!.style.animation="animate ease-in 8s normal 1";
           document.getElementById("cardImage2")!.style.animation="animate linear 8s reverse 0.5s 1";
@@ -58,8 +58,7 @@ const Home: NextPage = () => {
           
           return
         }
-        el.style.opacity = '1';
-        el = el.nextElementSibling;
+        el[i].style!.opacity = '1';
         i++;
 
       }, 80);
