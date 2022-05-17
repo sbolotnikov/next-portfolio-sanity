@@ -8,7 +8,7 @@ import gsap from 'gsap';
 import "animate.css/animate.min.css";
 import Typewriter from '../components/typewriter';
 import Typewriter2 from '../components/typewriter2';
-import Textfit  from 'react-textfit';
+// import Textfit  from 'react-textfit';
 var i = 0;
 
 const Home: NextPage = () => {
@@ -187,7 +187,7 @@ const Home: NextPage = () => {
               
               <figure id="cloud" className={"d-flex flex-column justify-content-center text-center position-absolute"} style={{ width: (hight > width) ? '95vw' : (width > 650) && (hight > 400) ? '40vw' : '80vw' }}>
                 {/* <Typewriter2 text='WELCOME TO UNIMATRIX' /> */}
-                <Textfit mode="multi">
+                {/* <Textfit mode="multi"> */}
                   <Typewriter text='Hello, My name is ' /><strong><Typewriter text='Sergey Bolotnikov.' /></strong>
                   <br /> <Typewriter text='I am a full-stack web developer and' />
                   <br /> <Typewriter text='javascript specialist. Technologies:' />
@@ -206,7 +206,7 @@ const Home: NextPage = () => {
                     title="Connect on Linkedin">
                     <span className="n fab"><i className="fa fa-linkedin-square" aria-hidden="true"></i></span>
                   </a>
-                </Textfit>
+                {/* </Textfit> */}
               </figure>
 
             </div>
