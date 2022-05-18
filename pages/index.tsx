@@ -179,7 +179,7 @@ const Home: NextPage = () => {
                   <path style={{ opacity: 0 }} d="M263.5 1011.5L253 1026.5L258 1037L253.5 1048V1071L244.251 1106.5L239.5 1142.5L218.379 1149.47L196.117 1155.89L183.482 1187L167.838 1242.31L160.017 1299.59L154 1386H266.513L231.616 1359.33L224.997 1328.72V1282.3L231.616 1242.31L249.666 1230L275.5 1241.5L249.666 1168.73L303.816 1140.58L364.585 1119.84L370 1105.03L334.501 1089.23L309.231 1068.98L286.969 1056.14L277.343 1044.79L294 999L277.343 989.5L257.5 984L263.5 1011.5Z" fill="#2E2E2E" />
                   <path style={{ opacity: 0 }} d="M229.5 1366.5L260.5 1386H334L317 1375L276.5 1242.5L260.5 1230H243L229.5 1242.5L222.5 1271V1304.5V1345L229.5 1366.5Z" fill="#383838" />
                 </svg>
-                <img id="cardImage2" src={"/images/sergeyprofile.png"}
+                <img id="cardImage2" src={"/images/profile.png"}
                   style={{ position:"absolute", borderColor: "transparent", opacity:0,top:0,left:0, height: "100%",width: "100%",zIndex: '8' }} alt="Sergey's Profile" />
                   </div>
                 {/* </Animated> */}
