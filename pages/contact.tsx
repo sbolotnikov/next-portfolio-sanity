@@ -49,9 +49,9 @@ function contact() {
             onSubmit={(e)=>handleSubmit}
           >
  
-            <h2 className="w-full text-center font-extrabold">Есть вопросы? Пишите!</h2>
+            <h2 className="w-full text-center font-extrabold">{t("contact:haveaQuestion")}</h2>
             <p className="w-full ">
-              Я с удовольствием отвечу! Если вопрос срочный, лучше позвонить{' '}
+              {t("contact:gladtoanswer")}{' '}
               <strong>+1(917) 916-2840</strong>.
             </p>
 
@@ -59,7 +59,7 @@ function contact() {
               id="userName1"
               className="w-full rounded "
               type="text"
-              placeholder="Ваше имя"
+              placeholder={t("common:yourName")}
               required
               onChange={(e)=>{setName(e.target.value)}}
               value = {name}
@@ -70,14 +70,14 @@ function contact() {
               id="userEmail1"
               className="w-full rounded "
               type="email" 
-              placeholder="E-mail"
+              placeholder={t("common:email")}
               required
               onChange={(e)=>{setEmail(e.target.value)}}
               value = {email}
             />
             <textarea
               className="w-full rounded "
-              placeholder="Любые вопросы или пожелания"
+              placeholder={t("contact:anyquestions")}
               required
               onChange={(e)=>{setMessage(e.target.value)}}
               value = {message}
@@ -85,7 +85,7 @@ function contact() {
             ></textarea>
             <div className="error alert alert-error"></div>
             <button type="submit" className="rounded-full bg-blue-500 p-2 transition delay-150 m-2 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500">
-              Отправить сообщение
+              {t("contact:sendMessage")}
             </button>
           </form>
         </div>

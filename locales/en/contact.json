@@ -1,4 +1,7 @@
 {
-  "Contact_page":"Contact Page"
- 
+  "Contact_page":"Contact Page",
+  "gladtoanswer": "Drop me a line I'll be happy to answer you! If it is urgent, then call me.",
+  "sendMessage": "Send a message",
+  "haveaQuestion":"Have a question? Drop me a line!",
+  "anyquestions":"Write you message here"
   }
