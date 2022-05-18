@@ -62,6 +62,7 @@ padding: 3.5rem;
 @media screen and (max-width: 767px) {
  .navbar{
   padding: 0 1.5rem 0 0;
+  z-index: 100;
  }
   .navbar__list {
     display: flex;
@@ -70,7 +71,7 @@ padding: 3.5rem;
     height: 100vh;
     left:0%;
     top:0;
-    z-index: 100;
+    
     list-style: none;
     position: absolute;
   }
@@ -88,6 +89,7 @@ padding: 3.5rem;
     background-color:lightcoral;
     border-radius: 0 3rem 3rem 0;
     margin:1.25rem 0;
+    z-index: 100;
   }
 
   .navbar__right_span {

@@ -7,9 +7,9 @@ type IProps = {
 }
 function NavItem({ icon, title, url }: IProps) {
   return (
-    <Link href={url}
+    <Link href={url} className=""
     >
-      <div className="group flex  cursor-pointer tr   flex-row items-end  md:hover:scale-125 text-gray-800 dark:text-gray-100 md:w-12 md:flex-col md:items-center">
+      <div className="group flex  cursor-pointer tr   flex-row items-end  md:hover:scale-125 text-gray-800 dark:text-gray-100 md:w-12 md:flex-col md:items-center ">
         <img
           className="order-1 h-8 w-8 mx-1 group-hover:animate-bounce  md:order-none md:mb-1 dark:invert "
           src={icon}
