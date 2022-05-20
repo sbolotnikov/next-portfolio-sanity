@@ -18,10 +18,31 @@ export default {
       },
     },
     {
+      title: 'URL',
+      name: 'href',
+      type: 'url',
+    },
+    {
+      title: 'GitHub',
+      name: 'github',
+      type: 'url',
+    },
+    {
+      title: 'Description',
+      name: 'description',
+      type: 'text',
+    },
+    {
       name: 'author',
       title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'author'}}],
+    },
+    {
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'category'}}],
     },
     {
       name: 'mainImage',
@@ -32,34 +53,18 @@ export default {
       },
     },
     {
-      name: 'categories',
-      title: 'Categories',
+      name: 'images',
+      title: 'Images',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      of:  [{type: 'reference', to: {type: 'projectimage'}}],
     },
+
     {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
     },
-    {
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-    },
+
   ],
 
-  preview: {
-    select: {
-      title: 'title',
-      author: 'author.name',
-      media: 'mainImage',
-    },
-    prepare(selection) {
-      const {author} = selection
-      return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`,
-      })
-    },
-  },
 }

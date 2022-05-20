@@ -13,5 +13,13 @@ export default {
       title: 'Description',
       type: 'text',
     },
+    {
+      name: 'imageCat',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
 }

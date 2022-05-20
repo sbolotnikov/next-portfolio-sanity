@@ -10,15 +10,18 @@ function contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage]= useState("");
 
-  const handleSubmit=(e:Event)=>{
-      e.preventDefault();
+  const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>)=>{
+    event.preventDefault();
+    console.log(process.env.SENDGRID_API_KEY)
+    // const button: HTMLButtonElement = event.currentTarget;
       let data = {
           name,
           email,
           message,
           mainEmail:'sbolotnikov@gmail.com'
         }
-      fetch('/api/contact', {
+        console.log( data)
+      fetch('/api/sendemail', {
           method: 'POST',
           headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -26,6 +29,7 @@ function contact() {
           },
           body: JSON.stringify(data)
         }).then((res) => {
+            console.log(res)
           if (res.status === 200) {   
             setName('')
             setEmail('')
@@ -46,10 +50,8 @@ function contact() {
           <form
             className="w-[80%] h-[80%] max-w-[700px] max-h-[700px] rounded-md flex flex-col justify-between  items-center p-2"
             style={{ boxShadow: '0 0 150px rgb(255 236 0 / 50%)'}}
-            onSubmit={(e)=>handleSubmit}
           >
- 
-            <h2 className="w-full text-center font-extrabold">{t("contact:haveaQuestion")}</h2>
+            <h1 className=" font-bold text-center text-5xl">{t("contact:haveaQuestion")}</h1>
             <p className="w-full ">
               {t("contact:gladtoanswer")}{' '}
               <strong>+1(917) 916-2840</strong>.
@@ -84,7 +86,9 @@ function contact() {
               minLength={5}
             ></textarea>
             <div className="error alert alert-error"></div>
-            <button type="submit" className="rounded-full bg-blue-500 p-2 transition delay-150 m-2 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500">
+            <button  className="rounded-full bg-blue-500 p-2 transition delay-150 m-2 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500"
+            onClick={handleSubmit}
+            >
               {t("contact:sendMessage")}
             </button>
           </form>

@@ -1,30 +1,37 @@
-
 import type { NextApiRequest, NextApiResponse } from 'next'
+import nc from 'next-connect';
 const sgMail = require('@sendgrid/mail')
-type Data = {
-    name: string
-  }
-  export default function handler(
-    req: NextApiRequest,
-    res: NextApiResponse<Data>
-  ) {
-  
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+const handler = nc<NextApiRequest, NextApiResponse>();
+interface ExtendedRequest {
+  body: {
+        mainEmail: string,
+        name: string,
+        message: string,
+        email: string,
+      }
+}
+interface ExtendedResponse {
+  // cookie(name: string, value: string): void;
+  // status: string
+}
 
+handler.post<ExtendedRequest, ExtendedResponse>((req, res) => {
+  const body = JSON.parse(req.body);
+  console.log(body)
+  console.log(process.env.SENDGRID_API_KEY)
   sgMail
     .send({
-        from: req.body.mainEmail,
-        to: req.body.mainEmail,
-        subject: `Message From ${req.body.name}`,
-        text: req.body.message + " | Sent from: " + req.body.email,
-        html: `<div>${req.body.message}</div><p>Sent from:
-        ${req.body.email}</p>`,
+      from: body.mainEmail,
+      to: body.mainEmail,
+      subject: `Message From ${body.name}`,
+      text: body.message + ' | Sent from: ' + body.email,
+      html: `<div>${body.message}</div><p>Sent from:
+        ${body.email}</p>`,
     })
-    .then(() => 
-        res.status(200).json({ name: 'Email sent' })
-    )
-    .catch((error:Object) => {
+    .then(() => res.status(200).json({ status: 'Email sent' }))
+    .catch((error: Object) => {
       console.error(error)
     })
-  
-  }
+});
+export default handler;

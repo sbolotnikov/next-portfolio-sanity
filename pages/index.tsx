@@ -180,7 +180,7 @@ const Home: NextPage = () => {
                   <path style={{ opacity: 0 }} d="M229.5 1366.5L260.5 1386H334L317 1375L276.5 1242.5L260.5 1230H243L229.5 1242.5L222.5 1271V1304.5V1345L229.5 1366.5Z" fill="#383838" />
                 </svg>
                 <img id="cardImage2" src={"/images/profile.png"}
-                  style={{ position:"absolute", borderColor: "transparent", opacity:0,top:0,left:0, height: "100%",width: "100%",zIndex: '8' }} alt="Sergey's Profile" />
+                  style={{ position:"absolute", borderColor: "transparent", opacity:0,top:0,left:0, height: "70vh",width: "56.6vh",marginTop:"-2.8vh",zIndex: '8' }} alt="Sergey's Profile" />
                   </div>
                 {/* </Animated> */}
               

@@ -20,7 +20,7 @@ function resume() {
             rel="noopener noreferrer"
             download
           >
-            <button className="rounded-full bg-blue-500 p-2 transition delay-150 m-2 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500">
+            <button className="rounded-full bg-blue-500 p-2 transition delay-150 m-10 md:m-2 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500">
               {t('common:Download')}
             </button>
           </a>
@@ -32,11 +32,11 @@ function resume() {
             />
           </div>
         </div>
-        <div className="flex flex-col m-auto w-[95%] items-start justify-center">
-            <img
+        <div className="flex flex-col ml-10  md:m-auto w-[85%] items-start justify-center ">
+            < img
               src={ '/images/serega.png'}
               alt="avatar"
-              className='h-48 mx-auto rounded'
+              className='h-48 mx-auto my-5 rounded'
             />
 
           <h2 className="pt-8  font-bold text-3xl">{t("common:name")}</h2>
