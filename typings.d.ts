@@ -19,7 +19,7 @@ export interface Category {
     _id: string;
     title:string;
     description:string;
-    image: {
+    imageCat: {
         asset: {
             url:string;
         };
