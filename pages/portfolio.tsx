@@ -87,7 +87,7 @@ function portfolio({posts, categories}:Props) {
           return (
             <button className="group cursor-pointer h-24 md:hover:scale-115 flex flex-col justify-center items-center mx-2" key={index} data-value={item._id} 
             onClick={addTechToFilter}>
-              <img className="h-8 w-8 group-hover:animate-bounce transition-transform duration-200 ease-in-out" src={urlFor(item.imageCat).url()!} alt="" />
+             {item.imageCat && <img className="h-8 w-8 group-hover:animate-bounce transition-transform duration-200 ease-in-out" src={urlFor(item.imageCat).url()!} alt="" />}
                 <p className="opacity-0 tracking-widest transition duration-300 ease-in-out group-hover:opacity-100 text-center dark:text-light whitespace-nowrap">{item.title}</p>
             </button>
           )
