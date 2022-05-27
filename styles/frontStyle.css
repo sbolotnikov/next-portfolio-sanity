@@ -245,7 +245,7 @@ h4.card-text {
   font-size: large;
 }
 .container {
-  border-top: 1px solid grey;
+
   padding: 0px;
   /* margin: 0px; */
   margin-bottom: 50px;
@@ -408,4 +408,10 @@ a:hover {
   font-size: 10vw;
   z-index: 400;
   opacity: 1;
+}
+/* Animation of script */
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
