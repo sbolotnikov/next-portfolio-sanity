@@ -632,7 +632,10 @@ const Home: NextPage = () => {
                 {/* <Textfit mode="multi"> */}
                 <Typewriter text="Hello, My name is " />
                 <div className="w-1/2 origin-center -rotate-12 mx-auto">
-                <ScriptingSVG text={"Sergey Bolotnikov"} duration={1.5} delay={5.2} bgColor={"turquoise"} stroke={2} textColor={"blue"} />
+                <ScriptingSVG text={"Sergey Bolotnikov"} duration={1} delay={5.2} bgColor={"turquoise"} stroke={2} textColor={"blue"} />
+                </div>
+                <div className="hidden">
+                <Typewriter  text="Sergey Bolotnikov" />
                 </div>
                 <br /> <Typewriter text="I am a full-stack web developer and" />
                 <br />{' '}
