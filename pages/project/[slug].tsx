@@ -24,8 +24,8 @@ const Project = ({project}:Props) => {
     // document.getElementById('projectHero')!.style.backgroundImage = `url(${urlFor(project[0].mainImage).url()!})`;
   }, []);
   return <>
-
-  <h1 className=" font-bold text-center text-3xl dark:text-light">{t('project:Project')}: {project[0].title}</h1>
+  <div className="w-[80%] max-w-[700px]  rounded-md flex flex-col justify-between  items-center m-auto">
+  <h1 className=" font-bold text-center text-3xl flex-wrap dark:text-light">{t('project:Project')}: {project[0].title}</h1>
    <img className="w-full max-w-md mx-auto" src={urlFor(project[0].mainImage).url()!} alt="main Project Image"/>
     <h1 className=" font-bold text-left flex flex-row justify-start text-md leading-5 dark:text-light">{t("project:Languages")}:
     { project[0].categories.filter(category=> category.description=='language').map((item, index) => {
@@ -46,7 +46,7 @@ const Project = ({project}:Props) => {
     </h1>
     <h1 className=" flex flex-col overflow-hidden font-bold text-left text-md leading-5 dark:text-light">{t("project:AdditinalTech")}:
     
-    <div className="flex flex-row  items-start overflow-auto justify-start   p-2 ">
+    <div className="flex flex-row  items-start overflow-auto justify-start p-2 ">
     { project[0].categories.filter(category=>(category.description!=='projects' && category.description!=='language')).map((item, index) => {
           return (
             <button className="group cursor-pointer scale-120 hover:scale-130 flex flex-col items-center mx-2 " key={index}  >
@@ -60,7 +60,11 @@ const Project = ({project}:Props) => {
     <Link href={project[0].href}>
     <img src="/icons/www.svg" alt="www site" className="w-10 m-auto dark:invert " />
     </Link>
-    <div className="flex flex-row overflow-scroll  items-end justify-center w-fit m-auto p-2 ">
+    <Link href={project[0].github}>
+    <img src="/icons/github.svg" alt="www site" className="w-10 m-auto dark:invert " />
+    </Link>
+    <h1 className=" flex flex-col overflow-hidden font-bold text-left text-md leading-5 dark:text-light">{t("project:Developer")}:
+    <div className="flex flex-row  items-start overflow-auto justify-start p-2 ">
     { project[0].authors.map((item, index) => {
           return (
             <button className="group cursor-pointer scale-120 hover:scale-130 flex flex-col items-center mx-2 " key={index}  >
@@ -69,6 +73,8 @@ const Project = ({project}:Props) => {
             </button>
           )
         })}
+    </div>
+    </h1>
     </div>
   </>;
 
