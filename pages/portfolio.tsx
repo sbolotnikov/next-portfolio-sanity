@@ -40,26 +40,26 @@ function portfolio({posts, categories}:Props) {
       arrTotal.push(posts[i].categories.map(category=>category._ref).toString())
     }
     let arrExclude=[];
-    let postsCopy=posts;
-
+    console.log(arrTotal)
     let arr=filterTech.map(category=>category._id);
-    let i=posts.length;
-    if (arr.length>0) while(i > 0) {
-      i--;
+    let n=posts.length;
+    if (arr.length>0) while(n > 0) {
+      n--;
       let j=arr.length-1
       while (j>-1){
-        if (arrTotal[i].indexOf(arr[j])<0){
-          arrExclude.push(i);
+        if (!arrTotal[n].includes(arr[j])){
+          arrExclude.push(n);
           j=0
         }
 
         j--;
       }
-      for (let i=arrExclude.length; i>0; i--) {postsCopy.splice(arrExclude[i],1)}
-        setFilterProject(postsCopy);
+     
     } 
-    
-      console.log(postsCopy);
+let postsCopy=[]
+    for (let i=0; i<posts.length; i++) {if (arrExclude.indexOf(i)<0) postsCopy.push(posts[i])}
+    setFilterProject(postsCopy);
+      console.log(arrExclude);
 
   }, [filterTech]);
   return (

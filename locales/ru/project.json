@@ -1,0 +1,13 @@
+{
+    "Project":"Проект",
+    "Languages":"Используемые языки",
+    "TypeOfProject":"Тип проекта",
+    "AdditinalTech":"Доп. технологии используемые на проекте",
+    "Personal project":"Личный проект",
+    "Full Stack":"Полный Стек",
+    "Featured":"Особенный проект",
+    "Shared project":"Совместный проект",
+    "Front End":"Фронтенд",
+    "Back End":"Бэкэнд"
+    
+    }

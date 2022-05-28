@@ -4,7 +4,8 @@
     "pages":{
       "*":["common"],
       "/contact":["contact"],
-      "/resume":["resume"]
+      "/resume":["resume"],
+      "/project/[slug]":["project"]
     }
   }
  

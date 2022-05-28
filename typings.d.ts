@@ -2,6 +2,8 @@ export interface Post {
     _id: string;
     title:string;
     description:string;
+    href:url,
+    github:url,
     mainImage: {
         asset: {
             url:string;
@@ -13,6 +15,39 @@ export interface Post {
     categories: [{
         _ref:string;
 }]
+    body: [object];
+}
+export interface Project {
+    _id: string;
+    title:string;
+    href:url,
+    github:url,
+    description:string;
+    mainImage: {
+        asset: {
+            url:string;
+        };
+    };
+    slug: {
+        current: string;
+    };
+    categories: [{
+        title:string;
+        description:string;
+        imageCat: {
+            asset: {
+                url:string;
+            };
+        };
+}];
+      authors:[{
+        name:string;
+        image: {
+            asset: {
+                url:string;
+            };
+        };
+}]; 
     body: [object];
 }
 export interface Category {
