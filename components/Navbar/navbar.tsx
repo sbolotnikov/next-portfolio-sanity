@@ -113,7 +113,7 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
                 return (
                   <div
                     key={`language__${index}`}
-                    className=" flex flex-row p-1 text-center hover:bg-purple-300 hover:text-white focus:outline-none focus:ring   focus:ring-purple-300 active:bg-purple-400 active:text-white"
+                    className=" flex flex-row p-1 text-center bg-slate-200 hover:bg-purple-300 hover:text-white focus:outline-none focus:ring   focus:ring-purple-300 active:bg-purple-400 active:text-white"
                     onClick={()=>router.push(router.asPath, router.asPath, { locale: item })}
                   >
                     <img

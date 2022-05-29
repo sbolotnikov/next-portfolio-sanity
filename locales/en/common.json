@@ -14,5 +14,15 @@
   "CallMe":"Call Me",
   "yourName":"Enter your name",
   "email":"E-mail",
-  "Filter":"Choose techs to filter projects:"
+  "Filter":"Choose project types and/or techs to filter projects:",
+  "Personal project":"Personal project",
+  "Full Stack":"Full Stack",
+  "Featured":"Featured",
+  "Group project":"Group project",
+  "Front End":"Front End",
+  "Back End":"Back End",
+  "JavaScript":"JavaScript",
+  "TypeScript":"TypeScript",
+  "Project types":"Project types or used languages:",
+  "Techs used":"Technologies used:"
   }
