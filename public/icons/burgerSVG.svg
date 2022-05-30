@@ -1,0 +1,7 @@
+<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="burgerSVG">
+<path id="topbar" d="M5 13H65.5" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path id="middlebar" d="M5 35H65.5" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path id="bottombar" d="M5 57H65.5" stroke="black" stroke-width="5" stroke-linecap="round"/>
+</g>
+</svg>

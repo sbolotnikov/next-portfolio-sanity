@@ -98,8 +98,11 @@ padding: 3.5rem;
   }
 
 }
-/* @media (min-width: 768px){
-  .navbar{
-  padding: 1.5rem 1.5rem 0 0;
+@keyframes dashout {
+  0% {
+    transform: rotate(0);
   }
-} */
+  100% {
+    transform: rotate(360deg);
+  }
+}

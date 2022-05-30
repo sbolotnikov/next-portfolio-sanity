@@ -91,10 +91,7 @@ const Home: NextPage = () => {
           >
             <div className="d-flex justify-content-center align-middle text-dark">
 
-              {/* <div className="h-20 w-40 bg-[#D9D9D9]">
-              <ScriptingSVG text={"Welcome to my page"} duration={3} delay={0} bgColor={"#D9D9D9"} stroke={2} textColor={"red"} />      
-              </div>
-              <div className="h-20 w-20 ">
+              {/* <div className="h-20 w-20 ">
                 <svg
                   viewBox="0 0 300 70"
                   fill="none"
@@ -106,8 +103,7 @@ const Home: NextPage = () => {
                     strokeDasharray: '312',
                     strokeDashoffset: '312',
                     animation: 'dash 2s linear  forwards',
-                  }}   d="M2.17554 47.8171C8.31836 45.6822 14.6717 40.3546 25.6755 31.3171C27.8941 30.125 28.6164 32.3308 27.6755 37.3171C25.5486 41.3432 22.386 43.0557 15.6755 45.8171C13.8103 45.7133 13.532 45.5074 14.6755 44.8171C19.7168 42.6892 21.1327 43.1787 22.1755 45.8171C21.5195 51.5994 13.0506 61.7654 4.67554 64.8171C1.57196 65.7771 0.549269 65.5152 1.17554 62.3171C3.8385 55.6612 8.08477 52.1926 24.1755 46.8171"
-                             stroke="black"/>
+                  }}    d="M5 35H65.5"        stroke="black"/>
 
                   </g>
                   <g transform="translate(28, 0)">
