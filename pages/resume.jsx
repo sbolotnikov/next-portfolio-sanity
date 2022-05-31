@@ -14,7 +14,7 @@ function resume() {
       WebViewer(
         {
           path: '/lib',
-          initialDoc: '/docs/sergey_bolotnikov_fs_resume.pdf',
+          initialDoc: '/docs/sergey-bolotnikov-fs-resume.pdf',
         },
         viewer.current
       ).then((instance) => {
