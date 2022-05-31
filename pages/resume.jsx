@@ -47,12 +47,6 @@ function resume() {
 
           <div className='webviewer' ref={viewer} style={{ height: '60vh' }}></div>
 
-
-            <embed
-              src="/docs/sergey_bolotnikov_fs_resume.pdf"
-              width="100%"
-              height="500px"
-            />
           </div>
         </div>
         <div className="flex flex-col ml-10  w-[85%] items-start justify-start ">
