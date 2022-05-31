@@ -34,7 +34,7 @@ function resume() {
       <main className="grid max-w-[1368px] w-full md:grid-cols-2">
         <div className="w-full">
           <a
-            href={'/docs/sergey_bolotnikov_fs_resume.pdf'}
+            href={'/docs/sergey-bolotnikov-fs-resume.pdf'}
             target="_blank"
             rel="noopener noreferrer"
             download
