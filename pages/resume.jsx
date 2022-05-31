@@ -3,6 +3,7 @@ import useTranslation from 'next-translate/useTranslation'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
+
 function resume() {
   const { t } = useTranslation()
   let router = useRouter();
@@ -16,7 +17,7 @@ function resume() {
           initialDoc: '/docs/sergey_bolotnikov_fs_resume.pdf',
         },
         viewer.current
-      ).then((instance:any) => {
+      ).then((instance) => {
         const { docViewer } = instance;
         // you can now call WebViewer APIs here...
       });
@@ -29,7 +30,7 @@ function resume() {
         <title>{t('common:Resume')}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className="pt-8 font-bold text-5xl">{t('common:Resume')}</h1>
+      <h1 className="pt-8 font-bold mb-3 text-5xl">{t('common:Resume')}</h1>
       <main className="grid max-w-[1368px] w-full md:grid-cols-2">
         <div className="w-full">
           <a
@@ -54,7 +55,7 @@ function resume() {
             />
           </div>
         </div>
-        <div className="flex flex-col ml-10  md:m-auto w-[85%] items-start justify-center ">
+        <div className="flex flex-col ml-10  w-[85%] items-start justify-start ">
             < img
               src={ '/images/serega.png'}
               alt="avatar"
