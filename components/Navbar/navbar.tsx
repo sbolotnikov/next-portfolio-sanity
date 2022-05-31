@@ -1,8 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import NavItem from './navItem'
-import * as React from 'react'
 import { ThemeContext } from '../../themeContext'
 import { ThemeContextType } from '../../@types/theme'
 import Burger from './burger'
@@ -16,7 +15,7 @@ type Props = {
 }
 
 const Navbar = ({ navbarLinks, path, locale }: Props) => {
-  const { darkTheme, setTheme } = React.useContext(
+  const { darkTheme, setTheme } = useContext(
     ThemeContext
   ) as ThemeContextType
   const [style1, setStyle1] = useState({ display: 'none' })
@@ -25,13 +24,28 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
   let router = useRouter()
 
   //   const { data: session, loading } = useSession();
+  useEffect(() => {
+    if (window.innerWidth<768)
+    {
+    document.getElementsByClassName('navbar__list')[0].classList.add('w-0')
+    let items=document.querySelectorAll('.nav_img')
+    for (let i=0;i<items.length;i++){
+      items[i].classList.add('w-0')
+    }
+    document.getElementById("theme-toggle")?.classList.add('hidden');
+    document.getElementById("locale-toggle")?.classList.add('hidden');
+  }
 
+
+
+  
+  }, []);  
   return (
-    <nav className="navbar bg-lightBG/25 text-dark dark:bg-darkBG/25 dark:text-light">
-      <ul className='navbar__list'>
+    <nav className="navbar  text-lightteal  dark:bg-darkBG/25 dark:text-light">
+      <ul className='navbar__list '>
         {navbarLinks.map((item, index) => {
           return (
-            <li className=" navbar__item " key={index}>
+            <li className=" navbar__item bg-[lightpink] md:bg-transparent" key={index}>
               <NavItem title={item.title} icon={item.icon} url={item.url} />
             </li>
           )

@@ -23,8 +23,8 @@ function Burger({status}) {
               <path              
                 d="M5 13H65.5"
                 stroke="currentColor"
-                stroke-width="8"
-                stroke-linecap="round"
+                strokeWidth="8"
+                strokeLinecap="round"
               />
             </g>
           </svg>
@@ -40,10 +40,10 @@ function Burger({status}) {
                 
                 d="M5 35H65.5"
                 stroke="currentColor"
-                stroke-dasharray="61"
-                stroke-dashoffset="0"
-                stroke-width="8"
-                stroke-linecap="round"
+                strokeDasharray="61"
+                strokeDashoffset="0"
+                strokeWidth="8"
+                strokeLinecap="round"
               />
 
             </g>
@@ -60,8 +60,8 @@ function Burger({status}) {
                
                 d="M5 57H65.5"
                 stroke="currentColor"
-                stroke-width="8"
-                stroke-linecap="round"
+                strokeWidth="8"
+                strokeLinecap="round"
               />
             </g>
           </svg>

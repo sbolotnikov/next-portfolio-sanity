@@ -1,10 +1,28 @@
 import Head from 'next/head'
 import useTranslation from 'next-translate/useTranslation'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import { useEffect, useRef } from 'react';
 function resume() {
   const { t } = useTranslation()
-  let router = useRouter()
+  let router = useRouter();
+  const viewer = useRef(null);
+
+  useEffect(() => {
+    import('@pdftron/webviewer').then(() => {
+      WebViewer(
+        {
+          path: '/lib',
+          initialDoc: '/docs/sergey_bolotnikov_fs_resume.pdf',
+        },
+        viewer.current
+      ).then((instance:any) => {
+        const { docViewer } = instance;
+        // you can now call WebViewer APIs here...
+      });
+    });
+  }, []);
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-start font-serif  py-2  dark:text-light">
       <Head>
@@ -25,6 +43,10 @@ function resume() {
             </button>
           </a>
           <div className="max-w-full overflow-auto">
+
+          <div className='webviewer' ref={viewer} style={{ height: '60vh' }}></div>
+
+
             <embed
               src="/docs/sergey_bolotnikov_fs_resume.pdf"
               width="100%"

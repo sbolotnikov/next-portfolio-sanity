@@ -5,7 +5,6 @@ import type { AppProps } from 'next/app';
 import Layout from '../components/layout';
 import ThemeProvider from '../themeContext';
 
-
 function MyApp({ Component, pageProps }: AppProps) {
   return ( 
    <ThemeProvider>

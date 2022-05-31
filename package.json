@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@pdftron/webviewer": "^8.5.0",
     "@sanity/image-url": "^1.0.1",
     "@sendgrid/mail": "^7.6.2",
     "animate.css": "^4.1.1",
