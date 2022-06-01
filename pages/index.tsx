@@ -10,7 +10,7 @@ import Typewriter from '../components/typewriter'
 import Typewriter2 from '../components/typewriter2'
 import ScriptingSVG from '../components/scriptingSVG'
 // import Textfit  from 'react-textfit';
-var i = 0
+
 
 const Home: NextPage = () => {
   const { t } = useTranslation()
@@ -27,25 +27,7 @@ const Home: NextPage = () => {
       ease: 'elastic',
     })
     portrate()
-    var timerIntervalbefore = setInterval(function () {
-      var timerInterval = setInterval(function () {
-        let element = document.querySelector('span.n')
-        if (!element) {
-          clearInterval(timerInterval)
-          clearInterval(timerIntervalbefore)
-          return
-        }
-        element.className = ''
-        element.className = 'glow'
-        if (i > 0) {
-          document.querySelector('.glow')?.classList.remove('glow')
-        }
-        i++
-        if (i === 227) {
-          document.querySelector('.glow')?.classList.remove('glow')
-        }
-      }, 60)
-    }, 4000)
+ 
     setHight(window.innerHeight)
     setWidth(window.innerWidth)
     // console.log(document?.getElementById('q')!.getTotalLength())
@@ -74,22 +56,15 @@ const Home: NextPage = () => {
 
   // 1120/1483 *hight*.4     `;
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2 ">
+    <div>
       <Head>
         <title>{t('common:Sergey Bolotnikov Portfolio')}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Fragment>
-        <main
-          className="container"
-          style={{ maxWidth: '1280px', overflow: 'hidden' }}
+        <div
+          className="max-w-[1280px] mx-auto flex flex-col items-center justify-between md:grid md:grid-cols-2"
         >
-          <div
-            id="cardGreeting"
-            className="jumbotron jumbotron-fluid bg-transparent"
-          >
-            <div className="d-flex justify-content-center align-middle text-dark">
+
 
               {/* <div className="h-20 w-20 ">
                 <svg
@@ -119,7 +94,6 @@ const Home: NextPage = () => {
                   position: 'relative',
                   height: '70vh',
                   width: '56.6vh',
-                  marginTop: '2.5vh',
                 }}
               >
                 <svg
@@ -609,55 +583,81 @@ const Home: NextPage = () => {
                 />
               </div>
               {/* </Animated> */}
+      
+             <div className="absolute right-0 bottom-0 w-full h-2/5 flex justify-center  items-end md:relative">
 
               <figure
                 id="cloud"
                 className={
-                  'd-flex flex-column justify-content-center position-absolute text-center'
+                  ' flex flex-col justify-center items-center rounded-md text-center text-lightteal w-full h-full bg-lightcream m-2 z-10'
                 }
-                style={{
-                  width:
-                    hight > width
-                      ? '95vw'
-                      : width > 650 && hight > 400
-                      ? '40vw'
-                      : '80vw',
-                }}
+                // style={{
+                //   width:
+                //     hight > width
+                //       ? '95vw'
+                //       : width > 650 && hight > 400
+                //       ? '40vw'
+                //       : '80vw',
+                // }}
               >
                 {/* <Typewriter2 text='WELCOME TO UNIMATRIX' /> */}
                 {/* <Textfit mode="multi"> */}
-                <Typewriter text="Hello, My name is " />
-                <div className="w-1/2 origin-center -rotate-12 mx-auto">
-                <ScriptingSVG text={"Sergey Bolotnikov"} duration={1} delay={5.2} bgColor={"turquoise"} stroke={2} textColor={"blue"} />
+                <div className="w-full text-left  ml-3">
+                <Typewriter text="Welcome to " speed={30} delay={3000}/>
                 </div>
-                <div className="hidden">
-                <Typewriter  text="Sergey Bolotnikov" />
+                <Link href="/portfolio" className="">
+                <div className="relative w-64 h-[15%] mx-auto cursor-pointer hover:animate-pulse ">
+                <div className="absolute top-0 left-0 origin-center -rotate-[20deg] ">
+                <ScriptingSVG text={"Sergey Bolotnikov"} duration={1} delay={4} height={"3rem"} width={"7rem"} bgColor={"#FBF5E7"} stroke={2} textColor={"#35536B"} />
                 </div>
-                <br /> <Typewriter text="I am a full-stack web developer and" />
-                <br />{' '}
-                <Typewriter text="javascript specialist. Technologies:" />
-                <br />
+                <div className="absolute top-0 right-0 origin-center text-xl">
+                <ScriptingSVG text={"Portfolio"} duration={1} delay={5} height={"3rem"} width={"7rem"} bgColor={"#FBF5E7"} stroke={2} textColor={"#35536B"} />
+                {/* <Typewriter text="Portfolio"  speed={30} delay={4000} /> */}
+                </div>
+                </div>
+                </Link>
+                 <Typewriter text="I am a full-stack web developer and javascript specialist. Some of my technologies:"  speed={30} delay={5000} /> 
                 <strong>
-                  <Typewriter text=" HTML/CSS | Bootstrap | JavaScript" />
-                  <br />
-                  <Typewriter text="React | NodeJS | Express | MongoDB" />
+                <a className="link" href="/project/quiz-land"><Typewriter text="React "  speed={30} delay={5000+35*30}/></a>
+                <a className="link" href="/project/quiz-land"><Typewriter text="| TypeScript |"  speed={30} delay={5000+35*30}/></a>
+                <a className="link" href="/project/quiz-land"><Typewriter text=" NodeJS "  speed={30} delay={5000+35*30}/></a>
+                <a className="link" href="/project/quiz-land"><Typewriter text="| Express |"  speed={30} delay={5000+35*30}/></a>
+                <a className="link" href="/project/quiz-land"><Typewriter text=" MongoDB "  speed={30} delay={5000+35*30}/></a>
+                <a className="link" href="/project/quiz-land"><Typewriter text="| SVG animation |"  speed={30} delay={5000+35*30}/></a>
+                <a className="link" href="/project/quiz-land"><Typewriter text=" Firebase "  speed={30} delay={5000+35*30}/></a>
+                <a className="link" href="/project/quiz-land"><Typewriter text="| NextJS"  speed={30} delay={5000+35*30}/></a>
                 </strong>
                 <br />
-                <a className="linkHome" href="tel:917-916-2840">
-                  <strong className="text-black">
-                    <Typewriter text="Tel.:(917)916-2840." />
-                  </strong>
+                
+                
+                
+                
+                <a className="link" href="tel:917-916-2840">
+
+                  <img
+          className=" order-1 h-8 w-8 mx-1 hover:animate-bounce  md:order-none md:mb-1 dark:invert "
+          src={"/icons/navigation/phone.svg"}
+          alt={`phone`}
+        />
                 </a>
+                <a className="link" href="/contact">
+
+<img
+className=" order-1 h-8 w-8 mx-1 hover:animate-bounce  md:order-none md:mb-1 dark:invert "
+src={"/icons/navigation/inbox.svg"}
+alt={`phone`}
+/>
+</a>
                 <a
-                  className="linkHome"
+                  className="link"
                   title="Contact Email"
                   href="mailto:sbolotnikov@gmail.com"
                 >
                   <strong>
-                    <Typewriter text="EMail:sbolotnikov@gmail.com" />
+                    {/* <Typewriter text="EMail:sbolotnikov@gmail.com" /> */}
                   </strong>
                 </a>
-                <Typewriter text="My networks:" />
+                {/* <Typewriter text="My networks:" /> */}
                 <a
                   id="facebook"
                   href="https://www.facebook.com/bolotnikov/"
@@ -696,10 +696,8 @@ const Home: NextPage = () => {
                 </a>
                 {/* </Textfit> */}
               </figure>
-            </div>
-          </div>
-        </main>
-      </Fragment>
+              </div>
+        </div>
     </div>
   )
 }

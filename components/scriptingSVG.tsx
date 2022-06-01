@@ -6,10 +6,12 @@ type ScriptingType = {
     bgColor: string,
     textColor: string,
     stroke:number,
-    delay:number
+    delay:number,
+    height:string,
+    width: string
   };
   
-    export default function ScriptingSVG({text, duration, bgColor, textColor, stroke, delay}:ScriptingType) {
+    export default function ScriptingSVG({text, duration, height, width, bgColor, textColor, stroke, delay}:ScriptingType) {
         let generatedSVG="";  
         const [svgElement,setSVGElement]= useState("")   
   let fontModule=[
@@ -533,6 +535,6 @@ type ScriptingType = {
     setSVGElement(generatedSVG)
 }, [])    
   return (
-    <div dangerouslySetInnerHTML={{__html:svgElement}}/>
+    <div style={{ height:height, width:width}} dangerouslySetInnerHTML={{__html:svgElement}}/>
   )
 }

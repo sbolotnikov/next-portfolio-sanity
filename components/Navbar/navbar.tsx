@@ -45,7 +45,7 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
       <ul className='navbar__list '>
         {navbarLinks.map((item, index) => {
           return (
-            <li className=" navbar__item bg-[lightpink] md:bg-transparent" key={index}>
+            <li className=" navbar__item bg-lightblue md:bg-transparent" key={index}>
               <NavItem title={item.title} icon={item.icon} url={item.url} />
             </li>
           )
