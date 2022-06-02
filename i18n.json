@@ -5,7 +5,8 @@
       "*":["common"],
       "/contact":["contact"],
       "/resume":["resume"],
-      "/project/[slug]":["project"]
+      "/project/[slug]":["project"],
+      "/":["frontpage"]
     }
   }
  

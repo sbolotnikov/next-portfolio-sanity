@@ -66,12 +66,12 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
                   .getElementsByTagName('body')[0]
                   .classList.remove('dark')
           }}
-          className=" rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+          className=" rounded-lg p-2 hover:bg-lightlavender outline-none focus:bg-lightlavender  dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
         >
           <svg
             id="theme-toggle-dark-icon"
             className="h-5 w-5"
-            fill="currentColor "
+            fill="#35536B "
             style={darkMode ? { display: 'none' } : { display: 'block' }}
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
         </button>
         <button
           id="locale-toggle"
-          className="relative m-1 bg-slate-200 rounded-md flex cursor-pointer flex-row dark:bg-slate-700 border p-1 outline-none"
+          className="relative m-1 hover:bg-lightlavender outline-none focus:bg-lightlavender rounded-md flex cursor-pointer flex-row dark:bg-slate-700 p-1 "
           onMouseEnter={(e) => {
             setStyle1({ display: 'flex' })
           }}
@@ -115,7 +115,7 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
             style={style1}
           >
             <div
-              className="m-1 w-full overflow-hidden rounded-md border"
+              className="m-1 w-full overflow-hidden rounded-md border-0"
               onMouseLeave={(e) => {
                 setStyle1({ display: 'none' })
               }}
@@ -124,7 +124,7 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
                 return (
                   <div
                     key={`language__${index}`}
-                    className=" flex flex-row bg-slate-200 p-1 text-center hover:bg-purple-300 hover:text-white focus:outline-none focus:ring   focus:ring-purple-300 active:bg-purple-400 active:text-white"
+                    className=" flex flex-row bg-lightlavender p-1 text-center hover:bg-lightteal hover:text-lightcream focus:outline-none focus:ring   focus:ring-lightteal active:bg-lightteal active:text-lightcream"
                     onClick={() =>
                       router.push(router.asPath, router.asPath, {
                         locale: item,

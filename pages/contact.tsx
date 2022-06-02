@@ -38,7 +38,7 @@ function contact() {
         })
   }
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2  dark:text-light">
+    <div className="flex min-h-screen flex-col items-center text-lightteal justify-center py-2  dark:text-light">
     <Head>
       <title>{t('contact:Contact_page')}</title>
       <link rel="icon" href="/favicon.ico" />
@@ -49,8 +49,8 @@ function contact() {
         <div className="absolute top-0 left-0 h-[100vh] w-[100vw] flex justify-center  items-center">
           <form
             className="w-[80%] h-[80%] max-w-[700px] max-h-[700px] rounded-md flex flex-col justify-between  items-center p-2"
-            style={{ boxShadow: '0 0 150px rgb(255 236 0 / 50%)'}}
-          >
+            style={{ boxShadow: '0 0 150px rgb(244 217 190 / 85%)'}}
+          > 
             <h1 className=" font-bold text-center text-5xl">{t("contact:haveaQuestion")}</h1>
             <p className="w-full ">
               {t("contact:gladtoanswer")}{' '}
@@ -86,7 +86,7 @@ function contact() {
               minLength={5}
             ></textarea>
             <div className="error alert alert-error"></div>
-            <button  className="rounded-full bg-blue-500 p-2 transition delay-150 m-2 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500"
+            <button  className="rounded-full bg-lightteal text-lightlavender p-2 transition delay-150 m-2 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-lightblue"
             onClick={handleSubmit}
             >
               {t("contact:sendMessage")}

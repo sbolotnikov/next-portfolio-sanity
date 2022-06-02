@@ -25,7 +25,7 @@ function resume() {
   }, []);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-start font-serif  py-2  dark:text-light">
+    <div className="flex min-h-screen flex-col text-lightteal items-center justify-start font-serif  py-2  dark:text-light">
       <Head>
         <title>{t('common:Resume')}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -39,7 +39,7 @@ function resume() {
             rel="noopener noreferrer"
             download
           >
-            <button className="rounded-full bg-blue-500 p-2 transition delay-150 m-10 md:m-2 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500">
+            <button className="rounded-full bg-lightteal text-lightlavender p-2 transition delay-150 m-10 md:m-2 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-lightblue">
               {t('common:Download')}
             </button>
           </a>
@@ -58,9 +58,9 @@ function resume() {
 
           <h2 className="pt-8  font-bold text-3xl">{t("common:name")}</h2>
           <h4 className="text-gray-500 mb-4 font-semibold text-xl">{t("common:Programmer")}</h4>
-          <hr className="w-1/2 rounded border-2 bg-[#833fb2] m-auto border-solid border-[#833fb2]" />
+          <hr className="w-1/2 rounded border-2 bg-lightteal m-auto border-solid border-lightteal" />
           <p className="my-4">{t("resume:MyMoto")}</p>
-          <hr className="w-1/2 rounded border-2 bg-[#833fb2] m-auto border-solid border-[#833fb2]" />
+          <hr className="w-1/2 rounded border-2 bg-lightteal m-auto border-solid border-lightteal" />
           <h5 className="mt-4 font-bold text-lg">{t("common:Address")}</h5>
           <p>3040 Edwin Ave. Apt. #2G, Fort Lee, NJ 07024</p>
           <h5 className="font-bold text-lg">{t("common:Phone")}</h5>
@@ -69,7 +69,7 @@ function resume() {
           <p>sbolotnikov@sbolotnikov.com</p>
           <h5 className="font-bold text-lg">{t("common:Web")}</h5>
           <p className="">https://sbolotnikov.github.io/react-portfolio/</p>
-          <hr className="w-1/2 rounded border-2 bg-[#833fb2] mt-4 mx-auto border-solid border-[#833fb2]" />
+          <hr className="w-1/2 rounded border-2 bg-lightteal mt-4 mx-auto border-solid border-lightteal" />
         </div>
       </main>
     </div>
