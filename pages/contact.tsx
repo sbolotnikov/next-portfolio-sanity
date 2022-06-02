@@ -38,7 +38,7 @@ function contact() {
         })
   }
   return (
-    <div className="flex min-h-screen flex-col items-center text-lightteal justify-center py-2  dark:text-light">
+    <div className="flex min-h-screen flex-col items-center justify-center py-2  dark:text-light">
     <Head>
       <title>{t('contact:Contact_page')}</title>
       <link rel="icon" href="/favicon.ico" />

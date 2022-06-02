@@ -25,7 +25,7 @@ function resume() {
   }, []);
 
   return (
-    <div className="flex min-h-screen flex-col text-lightteal items-center justify-start font-serif  py-2  dark:text-light">
+    <div className="flex min-h-screen flex-col items-center justify-start font-serif  py-2  dark:text-light">
       <Head>
         <title>{t('common:Resume')}</title>
         <link rel="icon" href="/favicon.ico" />

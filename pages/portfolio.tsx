@@ -65,7 +65,7 @@ function portfolio({ posts, categories }: Props) {
     console.log(arrExclude)
   }, [filterTech])
   return (
-    <div className="text-lightteal">
+    <>
       <h1 className=" text-center text-3xl font-bold dark:text-light">
         {t('common:Portfolio')}
       </h1>
@@ -264,7 +264,7 @@ function portfolio({ posts, categories }: Props) {
           </Link>
         ))}
       </div>
-    </div>
+    </>
   )
 }
 

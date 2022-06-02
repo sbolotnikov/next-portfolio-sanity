@@ -41,7 +41,7 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
   
   }, []);  
   return (
-    <nav className="navbar  text-lightteal  dark:bg-darkBG/25 dark:text-light">
+    <nav className="navbar    dark:bg-darkBG/25 dark:text-light">
       <ul className='navbar__list '>
         {navbarLinks.map((item, index) => {
           return (

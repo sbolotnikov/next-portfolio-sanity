@@ -20,7 +20,7 @@ const Project = ({ project }: Props) => {
     // document.getElementById('projectHero')!.style.backgroundImage = `url(${urlFor(project[0].mainImage).url()!})`;
   }, [])
   return (
-    <div className="w-[80%] max-w-[1460px] m-auto text-lightteal grid grid-cols-1 md:grid-cols-2 md:gap-4 ">
+    <div className="w-[80%] max-w-[1460px] m-au grid grid-cols-1 md:grid-cols-2 md:gap-4 ">
       <div className=" flex  flex-col items-start  justify-start rounded-md">
         <h1 className=" flex-wrap m-5 text-center text-3xl font-bold dark:text-light">
           {t('project:Project')}: {project[0].title}

@@ -604,7 +604,7 @@ const Home: NextPage = () => {
           <figure
             id="cloud"
             className={
-              ' z-10 m-2 p-2 text-sm flex h-full w-full flex-col items-center justify-between rounded-md md:text-lg bg-lightcream text-center text-lightteal'
+              ' z-10 m-2 p-2 text-sm flex h-full w-full flex-col items-center justify-between rounded-md md:text-lg bg-lightcream text-center'
             }
           >
             {/* <Typewriter2 text='WELCOME TO UNIMATRIX' /> */}

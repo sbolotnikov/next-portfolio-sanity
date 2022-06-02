@@ -52,7 +52,7 @@ export default function Layout({ children }: Props) {
 
       </Head>
 
-      <main id="mainPage" className="h-screen  bg-cover bg-center containerFont  relative text-lg overflow-hidden overflow-y-scroll" 
+      <main id="mainPage" className="h-screen  bg-cover bg-center text-lightteal containerFont  relative text-lg overflow-hidden overflow-y-scroll" 
     //   style={{backgroundImage:"url('/images/fon1.jpg')"}}
       >
         {/* <Navbar navbarLinks={(session && session.user.status ==="admin")?navbarLinksAdmin:(session && session.user.status ==="super")?navbarLinksSuper:navbarLinks} path={router.asPath} /> */}
