@@ -64,7 +64,7 @@
 
 .mediaScroller::before,
 .mediaScroller::after {
-  background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, transparent 100%);
+  background: linear-gradient(to right, rgba(244, 217, 190, 1) 0%, transparent 100%);
   content: '';
   height: 100%;
   position: absolute;
