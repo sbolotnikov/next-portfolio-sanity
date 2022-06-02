@@ -20,12 +20,12 @@ const Project = ({ project }: Props) => {
     // document.getElementById('projectHero')!.style.backgroundImage = `url(${urlFor(project[0].mainImage).url()!})`;
   }, [])
   return (
-    <div className="w-[80%] max-w-[1460px] m-au grid grid-cols-1 md:grid-cols-2 md:gap-4 ">
-      <div className=" flex  flex-col items-start  justify-start rounded-md">
+    <div className="w-[80%] max-w-[1460px] m-auto grid grid-cols-1 md:grid-cols-2 md:gap-2 ">
+      <div className=" flex  flex-col justify-center items-start  md:justify-start rounded-md">
         <h1 className=" flex-wrap m-5 text-center text-3xl font-bold dark:text-light">
           {t('project:Project')}: {project[0].title}
         </h1>
-        <div className="mediaScroller mx-auto w-full max-w-md">
+        <div className="mediaScroller mx-auto w-[85%] max-w-md">
           <div className="slideTrack">
             { project[0].images.map((item, j) => {
               return (
@@ -45,7 +45,7 @@ const Project = ({ project }: Props) => {
         </div>
 
         </div>
-        <div className="w-full flex flex-col justify-start items-center mt-3">
+        <div className="w-full flex flex-col justify-center md:justify-start items-center mt-3">
           <div className="w-full flex flex-row items-center justify-between">
           <Link href={project[0].href}>
           <svg
