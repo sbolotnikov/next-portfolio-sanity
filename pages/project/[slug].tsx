@@ -49,7 +49,7 @@ const Project = ({ project }: Props) => {
           <div className="w-full flex flex-row items-center justify-between">
           <Link href={project[0].href}>
           <svg
-                      className="m-auto w-12 cursor-pointer fill-lightteal transition-transform duration-200 ease-in-out hover:scale-110 dark:invert"
+                      className="m-auto w-12 cursor-pointer fill-lightteal stroke-70 transition-transform duration-200 ease-in-out hover:scale-110 dark:invert"
                       viewBox="0 0 500 500"
                     >
                       <path
@@ -109,7 +109,7 @@ const Project = ({ project }: Props) => {
           </Link>
           <Link href={project[0].github}>
           <svg
-                      className="m-auto w-10 cursor-pointer stroke-lightteal transition-transform duration-200 ease-in-out hover:scale-110 dark:invert"
+                      className="m-auto w-10 cursor-pointer stroke-lightteal stroke-2 transition-transform duration-200 ease-in-out hover:scale-110 dark:invert"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
