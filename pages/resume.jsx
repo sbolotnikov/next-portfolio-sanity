@@ -58,9 +58,9 @@ function resume() {
 
           <h2 className="pt-8  font-bold text-3xl">{t("common:name")}</h2>
           <h4 className="text-gray-500 mb-4 font-semibold text-xl">{t("common:Programmer")}</h4>
-          <hr className="w-1/2 rounded border-2 bg-lightteal m-auto border-solid border-lightteal" />
+          <hr className="w-1/2 rounded border-2 bg-lightteal m-auto border-solid border-lightteal dark:bg-light dark:border-light" />
           <p className="my-4">{t("resume:MyMoto")}</p>
-          <hr className="w-1/2 rounded border-2 bg-lightteal m-auto border-solid border-lightteal" />
+          <hr className="w-1/2 rounded border-2 bg-lightteal m-auto border-solid border-lightteal dark:bg-light dark:border-light" />
           <h5 className="mt-4 font-bold text-lg">{t("common:Address")}</h5>
           <p>3040 Edwin Ave. Apt. #2G, Fort Lee, NJ 07024</p>
           <h5 className="font-bold text-lg">{t("common:Phone")}</h5>
@@ -69,7 +69,7 @@ function resume() {
           <p>sbolotnikov@sbolotnikov.com</p>
           <h5 className="font-bold text-lg">{t("common:Web")}</h5>
           <p className="">https://sbolotnikov.github.io/react-portfolio/</p>
-          <hr className="w-1/2 rounded border-2 bg-lightteal mt-4 mx-auto border-solid border-lightteal" />
+          <hr className="w-1/2 rounded border-2 bg-lightteal mt-4 mx-auto border-solid border-lightteal dark:bg-light dark:border-light" />
         </div>
       </main>
     </div>

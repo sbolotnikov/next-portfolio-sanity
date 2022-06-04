@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import  { useEffect, useState } from 'react';
 import type { GetStaticProps, GetStaticPaths } from 'next';
 import { Project } from '../../typings';
 import { sanityClient, urlFor } from '../../sanity';
@@ -6,6 +6,7 @@ import useTranslation from 'next-translate/useTranslation';
 import type { ParsedUrlQuery } from 'querystring';
 import Image from 'next/image'
 import Link from 'next/link';
+import PictureViewer from '../../components/pictureViewer';
 interface QParams extends ParsedUrlQuery {
   slug?: string
 }
@@ -13,14 +14,23 @@ interface Props {
   project: [Project]
 }
 const Project = ({ project }: Props) => {
-
+  
+  const [revealPicture, setRevealPicture] = useState(false);
+  const [pictureSrc, setPictureSrc] = useState("");
+  const [pictureNote, setPictureNote] = useState("");
   const { t } = useTranslation()
+  const onChange=(val: boolean) => {
+    setRevealPicture(false)
+  };
+
   useEffect(() => {
     document.documentElement.style.setProperty('--slides', (project[0].images.length-1).toString());
     // document.getElementById('projectHero')!.style.backgroundImage = `url(${urlFor(project[0].mainImage).url()!})`;
   }, [])
   return (
-    <div className="w-[80%] max-w-[1460px] m-auto grid grid-cols-1 md:grid-cols-2 md:gap-2 ">
+    <>
+    {revealPicture &&<PictureViewer linkPicture={pictureSrc} note={pictureNote} onChange={onChange}/> }
+    <div className="w-[80%] max-w-[1460px] m-auto grid grid-cols-1 md:grid-cols-2 md:gap-2 ">    
       <div className=" flex  flex-col justify-center items-start  md:justify-start rounded-md">
         <h1 className=" flex-wrap m-5 text-center text-3xl font-bold dark:text-light">
           {t('project:Project')}: {project[0].title}
@@ -31,12 +41,17 @@ const Project = ({ project }: Props) => {
               return (
                 <button
                   key={`package${j}`} className="slide"
-                    onClick={(e)=>{ 
-                        if (document.querySelector(".slideTrack")!.className.indexOf('pauseAnim')>-1)  document.querySelector(".slideTrack")!.classList.remove('pauseAnim');
-                        else document.querySelector(".slideTrack")!.classList.add('pauseAnim')
-                    }}
+                    // onClick={(e)=>{ 
+                    //     if (document.querySelector(".slideTrack")!.className.indexOf('pauseAnim')>-1)  document.querySelector(".slideTrack")!.classList.remove('pauseAnim');
+                    //     else document.querySelector(".slideTrack")!.classList.add('pauseAnim')
+                    // }}
                 >
-                  <img src={item.link} alt="" className="max-w-md" />
+                  <img src={item.link} alt="" data-id={j} className="max-w-md" onClick={(e)=>{
+                    setPictureSrc(e.currentTarget.src);
+                    let index:number =+e.currentTarget.getAttribute('data-id')!
+                    setPictureNote(project[0].images[index].title);
+                    setRevealPicture(true);
+                  }}  />
                   <p className="dark:text-light">{item.title}</p>
                 </button>
               )
@@ -190,9 +205,7 @@ const Project = ({ project }: Props) => {
           </h1>
           <h1 className=" text-md flex w-full max-w-md flex-col text-left font-bold leading-5 dark:text-light">
           {t('project:Description')}: 
-          <p className="my-3 p-2 outline-none rounded-lg font-normal ring-2 ring-lightpink dark:text-light dark:ring-purple-300">
-              {project[0].description}
-          </p>
+          <p className="my-3 p-2 outline-none rounded-lg font-normal bg-lightcream dark:bg-transparent ring-2 ring-lightpink dark:text-light dark:ring-purple-300" dangerouslySetInnerHTML={{__html:project[0].description}}/>
         </h1>
           <h1 className=" text-md flex w-full max-w-md flex-col text-left font-bold leading-5 dark:text-light">
             {t('project:Developer')}:
@@ -218,6 +231,7 @@ const Project = ({ project }: Props) => {
           </h1>
         </div>
     </div>
+    </>
   )
 }
 

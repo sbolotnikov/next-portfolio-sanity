@@ -3,15 +3,13 @@ import { useEffect, useState } from "react";
 type ScriptingType = {
     text: string,
     duration: number,
-    bgColor: string,
-    textColor: string,
     stroke:number,
     delay:number,
     height:string,
     width: string
   };
   
-    export default function ScriptingSVG({text, duration, height, width, bgColor, textColor, stroke, delay}:ScriptingType) {
+    export default function ScriptingSVG({text, duration, height, width,  stroke, delay}:ScriptingType) {
         let generatedSVG="";  
         const [svgElement,setSVGElement]= useState("")   
   let fontModule=[
@@ -548,7 +546,8 @@ type ScriptingType = {
     };
     // add to offset the width of last letter instead of gap!!!
     let letter=fontModule.filter(item=>item.letter==text[text.length-1])[0];
-    generatedSVG=`<svg viewBox="0 0 ${offset+letter.width-letter.smallGap} 70" fill="${bgColor}" stroke="${textColor}" stroke-width="${stroke}"  xmlns="http://www.w3.org/2000/svg"> ${generatedSVG}</svg> `
+    // stroke="${textColor}" fill="${bgColor}"
+    generatedSVG=`<svg viewBox="0 0 ${offset+letter.width-letter.smallGap} 70"  stroke-width="${stroke}"  xmlns="http://www.w3.org/2000/svg"> ${generatedSVG}</svg> `
     console.log(generatedSVG);
     setSVGElement(generatedSVG)
 }, [])    

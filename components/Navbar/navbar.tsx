@@ -80,7 +80,7 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
           </svg>
           <svg
             id="theme-toggle-light-icon"
-            className="h-5 w-5"
+            className="h-5 w-5 fill-gray-100"
             style={darkMode ? { display: 'block' } : { display: 'none' }}
             fill="currentColor"
             viewBox="0 0 20 20"
