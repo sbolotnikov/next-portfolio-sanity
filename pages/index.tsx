@@ -640,7 +640,7 @@ const Home: NextPage = () => {
               <a href="/project/quiz-land">
                 <Typewriter text="React " speed={30} delay={5000 + 35 * 30} />
               </a>
-              <a  href="/project/quiz-land">
+              <a  href="/project/new-portfolio">
                 <Typewriter
                   text="| TypeScript |"
                   speed={30}
@@ -650,14 +650,14 @@ const Home: NextPage = () => {
               <a href="/project/cli-app-employee-tracker">
                 <Typewriter text=" NodeJS " speed={30} delay={5000 + 35 * 30} />
               </a>
-              <a href="/project/quiz-land">
+              <a href="/project/note-taker">
                 <Typewriter
                   text="| Express |"
                   speed={30}
                   delay={5000 + 35 * 30}
                 />
               </a>
-              <a href="/project/quiz-land">
+              <a href="/project/mern-ballroom-studio">
                 <Typewriter
                   text=" MongoDB "
                   speed={30}
@@ -671,14 +671,14 @@ const Home: NextPage = () => {
                   delay={5000 + 35 * 30}
                 />
               </a>
-              <a href="/project/quiz-land">
+              <a href="/project/bobby-store-e-commerce">
                 <Typewriter
                   text=" Firebase "
                   speed={30}
                   delay={5000 + 35 * 30}
                 />
               </a>
-              <a href="/project/quiz-land">
+              <a href="/project/almost-whattsapp">
                 <Typewriter text="| NextJS" speed={30} delay={5000 + 35 * 30} />
               </a>
             </strong>
