@@ -78,7 +78,7 @@ function portfolio({ posts, categories }: Props) {
             filterTech.map((item, index) => {
               return (
                 <button
-                  className="scale-120 hover:scale-130 group mx-2 flex cursor-pointer flex-col items-center "
+                  className="scale-120 pointer-events-auto	 hover:scale-130 group mx-2 flex cursor-pointer flex-col items-center "
                   key={index}
                   data-value={item._id}
                   onClick={removeTechToFilter}
@@ -110,7 +110,7 @@ function portfolio({ posts, categories }: Props) {
             .map((item, index) => {
               return (
                 <button
-                  className="md:hover:scale-115 group mx-2 flex h-24 cursor-pointer flex-col items-center justify-center"
+                  className="pointer-events-auto md:hover:scale-115 group mx-2 flex h-24 cursor-pointer flex-col items-center justify-center"
                   key={index}
                   data-value={item._id}
                   onClick={addTechToFilter}
@@ -144,7 +144,7 @@ function portfolio({ posts, categories }: Props) {
             .map((item, index) => {
               return (
                 <button
-                  className="md:hover:scale-115 group mx-2 flex h-24 cursor-pointer flex-col items-center justify-center"
+                  className="pointer-events-auto	md:hover:scale-115 group mx-2 flex h-24 cursor-pointer flex-col items-center justify-center"
                   key={index}
                   data-value={item._id}
                   onClick={addTechToFilter}

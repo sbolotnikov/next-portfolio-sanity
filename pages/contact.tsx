@@ -18,7 +18,7 @@ function contact() {
           name,
           email,
           message,
-          mainEmail:'sbolotnikov@gmail.com'
+          mainEmail:'serge.bolotnikov@gmail.com'
         }
         console.log( data)
       fetch('/api/sendemail', {
