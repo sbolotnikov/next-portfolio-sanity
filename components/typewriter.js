@@ -9,6 +9,7 @@ function Typewriter({ text, speed, delay }) {
       let timerIntervalbefore = setInterval(function () {
         let timerInterval = setInterval(function () {
           let element = document.querySelector('span.n')
+          if (element!==null){
           if (i==textArr.length) {
             clearInterval(timerInterval)
             clearInterval(timerIntervalbefore)
@@ -23,11 +24,12 @@ function Typewriter({ text, speed, delay }) {
           if (i === text.length) {
             document.querySelector('.glow')?.classList.remove('glow')
           }
+        }
         }, speed)
       }, textArr.length * speed)
     }, delay)
     
-  }, [])
+  }, [text])
   return (
     <span>
       {textArr.map((charItem, i) => (

@@ -176,9 +176,7 @@ function portfolio({ posts, categories }: Props) {
                   alt=""
                 />
                 <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center overflow-auto bg-lightlavender/90 opacity-0 transition-transform duration-200 ease-in-out group-hover:scale-105 group-hover:opacity-100 dark:bg-purple-900/90">
-                  <p className=" m-auto max-h-[85%] w-5/6 text-center dark:text-light ">
-                    {post.description}
-                  </p>
+                  <h3 className=" m-auto max-h-[85%] w-5/6 text-center dark:text-light " dangerouslySetInnerHTML={{ __html: post.description }}/>
                 </div>
               </div>
               <div className=" flex justify-between bg-white p-5 dark:bg-pink-700 dark:text-light">

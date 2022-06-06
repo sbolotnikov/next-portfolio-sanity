@@ -667,7 +667,7 @@ type ScriptingType = {
     generatedSVG=`<svg viewBox="0 0 ${offset+letter.width-letter.smallGap} 70"  stroke-width="${stroke}" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"> ${generatedSVG}</svg> `
     console.log(generatedSVG);
     setSVGElement(generatedSVG)
-}, [])    
+}, [text])    
   return (
     <div style={{ height:height, width:width}} dangerouslySetInnerHTML={{__html:svgElement}}/>
   )

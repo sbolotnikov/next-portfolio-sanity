@@ -689,7 +689,7 @@ const Home: NextPage = () => {
               >
                 <div id="facebook" className="group flex  cursor-pointer  flex-col  items-center  hover:scale-125">
                 <svg 
-                className=" mx-1 h-8 w-8 hover:animate-bounce  dark:stroke-gray-100 md:mb-1 "
+                className=" mx-1 h-8 w-8 hover:animate-bounce dark:fill-gray-100 dark:stroke-gray-100 md:mb-1 "
                 viewBox="0 0 48.605 48.605" >
 	<path d="M34.094,8.688h4.756V0.005h-8.643c-0.721-0.03-9.51-0.198-11.788,8.489c-0.033,0.091-0.761,2.157-0.761,6.983l-7.903,0.024
 		v9.107l7.913-0.023v24.021h12.087v-24h8v-9.131h-8v-2.873C29.755,10.816,30.508,8.688,34.094,8.688z M35.755,17.474v5.131h-8v24
@@ -698,7 +698,7 @@ const Home: NextPage = () => {
 		L35.755,17.474z"/>
 
 </svg>
-                  <p className=" mx-3 block tracking-widest md:opacity-0 transition duration-300 dark:text-gray-100  ease-in-out group-hover:opacity-100">
+                  <p className=" mx-3 block tracking-widest md:opacity-0 transition duration-300 text-lightteal dark:text-gray-100  ease-in-out group-hover:opacity-100">
                     {'Facebook'}
                   </p>
                 </div>
@@ -717,7 +717,7 @@ const Home: NextPage = () => {
                   >
                     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                   </svg>
-                  <p className=" mx-3 block tracking-widest md:opacity-0 transition duration-300 dark:text-gray-100  ease-in-out group-hover:opacity-100">
+                  <p className=" mx-3 block tracking-widest md:opacity-0 transition duration-300 text-lightteal dark:text-gray-100  ease-in-out group-hover:opacity-100">
                     {'Github'}
                   </p>
                 </div>
@@ -726,7 +726,7 @@ const Home: NextPage = () => {
               <Link href="https://www.linkedin.com/in/sergey-bolotnikov-10035617/">
                 <div id="linkedin" className="group flex  cursor-pointer  flex-col  items-center  hover:scale-125">
                 <svg
-                className=" mx-1 h-8 w-8 hover:animate-bounce  dark:stroke-gray-100 md:mb-1 "
+                className=" mx-1 h-8 w-8 hover:animate-bounce dark:fill-gray-100  dark:stroke-gray-100 md:mb-1 "
                 // fill="none"
                 viewBox="0 0 45.959 45.959" >
 		<path d="M5.392,0.492C2.268,0.492,0,2.647,0,5.614c0,2.966,2.223,5.119,5.284,5.119c1.588,0,2.956-0.515,3.957-1.489
@@ -740,7 +740,7 @@ const Home: NextPage = () => {
 			c-2.512,0-5.358,0-7.099,3.75c-0.359,0.775-0.679,2.632-0.679,3.553v15.368H17V14.422h6.36l0.408,4.044h1.639l0.293-0.473
 			c0.667-1.074,2.776-3.572,7.948-3.572c4.966,0,10.311,3.872,10.311,12.374V43.467z"/>
 </svg>
-                  <p className=" mx-3 block tracking-widest md:opacity-0 transition dark:text-gray-100  duration-300 ease-in-out group-hover:opacity-100">
+                  <p className=" mx-3 block tracking-widest md:opacity-0 transition text-lightteal dark:text-gray-100  duration-300 ease-in-out group-hover:opacity-100">
                     {'LinkedIn'}
                   </p>
                 </div>
