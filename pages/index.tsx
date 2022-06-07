@@ -9,6 +9,7 @@ import 'animate.css/animate.min.css'
 import Typewriter from '../components/typewriter'
 import Typewriter2 from '../components/typewriter2'
 import ScriptingSVG from '../components/scriptingSVG'
+import Image from 'next/image'
 // import Textfit  from 'react-textfit';
 
 const Home: NextPage = () => {
@@ -84,7 +85,7 @@ const Home: NextPage = () => {
       <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between md:landscape:grid md:grid-cols-2">
 
         {/* <Animated animateIn='wobble' initiallyVisible={true} animationOut="fadeOut" animationInDuration={2000}   isVisible={true}> */}
-        <div
+        < div
           style={{
             position: 'relative',
             height: '70vh',
@@ -124,8 +125,9 @@ const Home: NextPage = () => {
               position: 'absolute',
               top: 0,
               left: 0,
-              height: '100%',
-              width: '100%',
+              height: '67vh',
+              width: '56.6vh',
+              marginTop: '3.8vh',
               zIndex: '10',
             }}
           >
@@ -584,7 +586,8 @@ const Home: NextPage = () => {
               fill="#383838"
             />
           </svg>
-          <img
+        
+          <Image
             id="cardImage2"
             src={'/images/profile.png'}
             style={{
@@ -595,9 +598,10 @@ const Home: NextPage = () => {
               left: 0,
               height: '70vh',
               width: '56.6vh',
-              marginTop: '-2.8vh',
               zIndex: '8',
             }}
+            layout='fill' 
+            objectFit="contain"
             alt="Sergey's Profile"
           />
         </div>

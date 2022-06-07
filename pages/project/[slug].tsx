@@ -47,32 +47,35 @@ const Project = ({ project }: Props) => {
       <div className="m-auto grid w-[80%] max-w-[1460px] grid-cols-1 md:grid-cols-2 md:gap-2 ">
         <div className=" flex  flex-col items-start justify-center  rounded-md md:justify-start">
 
-          <div className="mediaScroller mx-auto w-[85%] max-w-md">
+          <div className="mediaScroller mx-auto w-[85%] max-w-md bg-slate-500/70">
             <div className="slideTrack">
               {project[0].images.map((item, j) => {
                 return (
                   <button
                     key={`package${j}`}
-                    className="slide"
+                    className="slide relative h-[50vh]"
                     // onClick={(e)=>{
                     //     if (document.querySelector(".slideTrack")!.className.indexOf('pauseAnim')>-1)  document.querySelector(".slideTrack")!.classList.remove('pauseAnim');
                     //     else document.querySelector(".slideTrack")!.classList.add('pauseAnim')
                     // }}
-                  >
-                    <img
+                  > <div className="relative w-[320px] h-[50vh]" onClick={(e) => {
+                        let element=e.currentTarget.children[0].children[0]
+                        setPictureSrc(element.getAttribute("src")!)
+                        let index: number =
+                          +element.getAttribute('data-id')!
+                        setPictureNote(project[0].images[index].title)
+                        setRevealPicture(true)
+                      }}>
+                    <Image
                       src={item.link}
                       alt=""
                       data-id={j}
-                      className="max-w-md"
-                      onClick={(e) => {
-                        setPictureSrc(e.currentTarget.src)
-                        let index: number =
-                          +e.currentTarget.getAttribute('data-id')!
-                        setPictureNote(project[0].images[index].title)
-                        setRevealPicture(true)
-                      }}
+                      layout="fill"
+                      objectFit="contain"
+                      
                     />
-                    <p className="dark:text-light">{item.title}</p>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 dark:text-light"><p className="text-center">{item.title}</p></div>
                   </button>
                 )
               })}
@@ -182,12 +185,15 @@ const Project = ({ project }: Props) => {
                     className=" m-2 flex flex-row items-center "
                     key={index}
                   >
-                    <img
-                      className="h-8 w-8 "
+                    <div className="relative h-9 w-9">
+                    <Image
                       src={urlFor(item.imageCat).url()!}
                       alt=""
+                      layout="fill"
+                      objectFit="contain"
                     />
-                    <p className=" whitespace-nowrap text-center dark:text-light">
+                    </div>
+                    <p className="ml-1 whitespace-nowrap text-center dark:text-light">
                       {t(`common:${item.title}`)}
                     </p>
                   </button>
@@ -209,11 +215,14 @@ const Project = ({ project }: Props) => {
                       className=" scale-120 hover:scale-130 mx-2 flex flex-col items-center "
                       key={index}
                     >
-                      <img
-                        className="h-8 w-8 "
+                      <div className="relative h-8 w-8">
+                      <Image
                         src={urlFor(item.imageCat).url()!}
                         alt=""
+                        layout="fill"
+                        objectFit="contain"
                       />
+                      </div>
                       <p className="  whitespace-nowrap text-center dark:text-light">
                         {item.title}
                       </p>
@@ -231,11 +240,14 @@ const Project = ({ project }: Props) => {
                     className=" mx-2 flex flex-col items-center "
                     key={index}
                   >
-                    <img
-                      className="h-8 w-8  rounded-full"
+                   <div className="relative h-8 w-8 rounded-full overflow-hidden">
+                    <Image
                       src={urlFor(item.image).url()!}
                       alt=""
+                      layout="fill"
+                      objectFit="contain"
                     />
+                    </div>
                     <p className="  whitespace-nowrap text-center dark:text-light">
                       {item.name}
                     </p>

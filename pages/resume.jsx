@@ -3,6 +3,7 @@ import useTranslation from 'next-translate/useTranslation'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 function resume() {
   const { t } = useTranslation()
@@ -50,14 +51,18 @@ function resume() {
           </div>
         </div>
         <div className="flex flex-col ml-10  w-[85%] items-start justify-start ">
-            < img
+           <div className="relative h-48 w-48 mx-auto my-5 rounded-full overflow-hidden">
+           < Image
               src={ '/images/serega.png'}
               alt="avatar"
-              className='h-48 mx-auto my-5 rounded'
+              layout="fill"
+              objectFit="contain"
             />
+           </div>
 
-          <h2 className="pt-8  font-bold text-3xl">{t("common:name")}</h2>
-          <h4 className="text-gray-500 mb-4 font-semibold text-xl">{t("common:Programmer")}</h4>
+
+          <h2 className="pt-8  font-bold w-full text-center text-3xl">{t("common:name")}</h2>
+          <h4 className="text-gray-500 mb-4 w-full font-semibold text-center text-xl">{t("common:Programmer")}</h4>
           <hr className="w-1/2 rounded border-2 bg-lightteal m-auto border-solid border-lightteal dark:bg-light dark:border-light" />
           <p className="my-4">{t("resume:MyMoto")}</p>
           <hr className="w-1/2 rounded border-2 bg-lightteal m-auto border-solid border-lightteal dark:bg-light dark:border-light" />
@@ -68,7 +73,7 @@ function resume() {
           <h5 className="font-bold text-lg">{t("common:Email")}</h5>
           <p>sbolotnikov@sbolotnikov.com</p>
           <h5 className="font-bold text-lg">{t("common:Web")}</h5>
-          <p className="">https://sbolotnikov.github.io/react-portfolio/</p>
+          <p className="">https://next-portfolio-sanity.vercel.app/</p>
           <hr className="w-1/2 rounded border-2 bg-lightteal mt-4 mx-auto border-solid border-lightteal dark:bg-light dark:border-light" />
         </div>
       </main>

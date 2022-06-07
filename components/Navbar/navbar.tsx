@@ -5,6 +5,7 @@ import NavItem from './navItem'
 import { ThemeContext } from '../../themeContext'
 import { ThemeContextType } from '../../@types/theme'
 import Burger from './burger'
+import Image from 'next/image'
 // import { useSession } from 'next-auth/react';
 // import ContactMailIcon from '@mui/icons-material/ContactMail';
 
@@ -15,37 +16,33 @@ type Props = {
 }
 
 const Navbar = ({ navbarLinks, path, locale }: Props) => {
-  const { darkTheme, setTheme } = useContext(
-    ThemeContext
-  ) as ThemeContextType
+  const { darkTheme, setTheme } = useContext(ThemeContext) as ThemeContextType
   const [style1, setStyle1] = useState({ display: 'none' })
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false)
   const [burgerState, setBurgerState] = useState(false)
   let router = useRouter()
 
   //   const { data: session, loading } = useSession();
   useEffect(() => {
-    if (window.innerWidth<768)
-    {
-    document.getElementsByClassName('navbar__list')[0].classList.add('w-0')
-    let items=document.querySelectorAll('.nav_img')
-    for (let i=0;i<items.length;i++){
-      items[i].classList.add('w-0')
+    if (window.innerWidth < 768) {
+      document.getElementsByClassName('navbar__list')[0].classList.add('w-0')
+      let items = document.querySelectorAll('.nav_img')
+      for (let i = 0; i < items.length; i++) {
+        items[i].classList.add('w-0')
+      }
+      document.getElementById('theme-toggle')?.classList.add('hidden')
+      document.getElementById('locale-toggle')?.classList.add('hidden')
     }
-    document.getElementById("theme-toggle")?.classList.add('hidden');
-    document.getElementById("locale-toggle")?.classList.add('hidden');
-  }
-
-
-
-  
-  }, []);  
+  }, [])
   return (
     <nav className="navbar    dark:bg-darkBG/25 dark:text-light">
-      <ul className='navbar__list '>
+      <ul className="navbar__list ">
         {navbarLinks.map((item, index) => {
           return (
-            <li className=" navbar__item bg-lightblue md:bg-transparent" key={index}>
+            <li
+              className=" navbar__item bg-lightblue md:bg-transparent"
+              key={index}
+            >
               <NavItem title={item.title} icon={item.icon} url={item.url} />
             </li>
           )
@@ -66,7 +63,7 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
                   .getElementsByTagName('body')[0]
                   .classList.remove('dark')
           }}
-          className=" rounded-lg p-2 hover:bg-lightlavender outline-none focus:bg-lightlavender  dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+          className=" rounded-lg p-2 outline-none hover:bg-lightlavender focus:bg-lightlavender  dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
         >
           <svg
             id="theme-toggle-dark-icon"
@@ -95,7 +92,7 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
         </button>
         <button
           id="locale-toggle"
-          className="relative m-1 hover:bg-lightlavender outline-none focus:bg-lightlavender rounded-md flex cursor-pointer flex-row dark:bg-slate-700 p-1 "
+          className="relative m-1 flex cursor-pointer flex-row rounded-md p-1 outline-none hover:bg-lightlavender focus:bg-lightlavender dark:bg-slate-700 "
           onMouseEnter={(e) => {
             setStyle1({ display: 'flex' })
           }}
@@ -104,18 +101,21 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
             else setStyle1({ display: 'none' })
           }}
         >
-          <img
-            className="h-6 rounded-full"
-            src={`/icons/${router.locale}.svg`}
-            alt={`${router.locale} flag`}
-          />
+          <div className="relative h-6 w-8 rounded-full">
+            <Image
+              src={`/icons/${router.locale}.svg`}
+              alt={`${router.locale} flag`}
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
           <p className="mx-1">{router.locale?.toUpperCase()}</p>
           <div
-            className="absolute top-9 right-0 z-[1000] flex w-[100px] flex-col items-center justify-start"
+            className="absolute top-9 right-0 z-[1000] flex w-[80px] flex-col items-center justify-start"
             style={style1}
           >
             <div
-              className="m-1 w-full overflow-hidden rounded-md border-0"
+              className="mt-1 overflow-hidden rounded-md border-0"
               onMouseLeave={(e) => {
                 setStyle1({ display: 'none' })
               }}
@@ -125,19 +125,20 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
                   <div
                     key={`language__${index}`}
                     className=" flex flex-row bg-lightlavender p-1 text-center hover:bg-lightteal hover:text-lightcream focus:outline-none focus:ring   focus:ring-lightteal active:bg-lightteal active:text-lightcream"
-                    onClick={() =>{
+                    onClick={() => {
                       router.push(router.asPath, router.asPath, {
-                        locale: item
+                        locale: item,
                       })
-                      
-                    }
-                    }
+                    }}
                   >
-                    <img
-                      className="h-6 rounded-full"
-                      src={`/icons/${item}.svg`}
-                      alt={`${item} flag`}
-                    />
+                    <div className="relative h-6 w-8 rounded-full">
+                      <Image
+                        src={`/icons/${item}.svg`}
+                        alt={`${item} flag`}
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </div>
                     <div className="mx-1" key={`language2__${index}`}>
                       {item.toUpperCase()}
                     </div>
@@ -147,41 +148,40 @@ const Navbar = ({ navbarLinks, path, locale }: Props) => {
             </div>
           </div>
         </button>
-        <button className="relative m-1 flex cursor-pointer rounded-md border p-1 md:hidden" onClick={() =>{
-          
-          burgerState?document.getElementsByClassName('navbar__list')[0].classList.add('w-0'):document.getElementsByClassName('navbar__list')[0].classList.remove('w-0')
-          let items=document.querySelectorAll('.nav_img')
-          for (let i=0;i<items.length;i++){
-            burgerState?items[i].classList.add('w-0'):items[i].classList.remove('w-0')
-          }
-          burgerState?document.getElementById("theme-toggle")?.classList.add('hidden'):document.getElementById("theme-toggle")?.classList.remove('hidden')
-          burgerState?document.getElementById("locale-toggle")?.classList.add('hidden'):document.getElementById("locale-toggle")?.classList.remove('hidden')
+        <button
+          className="relative m-1 flex cursor-pointer rounded-md border p-1 md:hidden"
+          onClick={() => {
+            burgerState
+              ? document
+                  .getElementsByClassName('navbar__list')[0]
+                  .classList.add('w-0')
+              : document
+                  .getElementsByClassName('navbar__list')[0]
+                  .classList.remove('w-0')
+            let items = document.querySelectorAll('.nav_img')
+            for (let i = 0; i < items.length; i++) {
+              burgerState
+                ? items[i].classList.add('w-0')
+                : items[i].classList.remove('w-0')
+            }
+            burgerState
+              ? document.getElementById('theme-toggle')?.classList.add('hidden')
+              : document
+                  .getElementById('theme-toggle')
+                  ?.classList.remove('hidden')
+            burgerState
+              ? document
+                  .getElementById('locale-toggle')
+                  ?.classList.add('hidden')
+              : document
+                  .getElementById('locale-toggle')
+                  ?.classList.remove('hidden')
 
-
-
-
-
-         setBurgerState(!burgerState)
-        }}>
-         <Burger status={burgerState}/>
+            setBurgerState(!burgerState)
+          }}
+        >
+          <Burger status={burgerState} />
         </button>
-        {/* Select box to change language */}
-        {/* )} */}
-        {/* {session && (
-          <div className="navbar__menu_grid  rounded-full overflow-hidden">
-            <Link href={'/profile'}>
-              <img
-                className="object-fill"
-                src={
-                  session.user.image
-                    ? session.user.image
-                    : '/icons/defaultUser.svg'
-                }
-                alt="profile picture"
-              />
-            </Link>
-          </div>
-        )} */}
       </div>
     </nav>
   )

@@ -4,6 +4,7 @@ import { sanityClient, urlFor } from '../sanity'
 import { Post, Category } from '../typings'
 import useTranslation from 'next-translate/useTranslation'
 import NavItem from '../components/Navbar/navItem'
+import Image from 'next/image'
 
 interface Props {
   posts: [Post]
@@ -78,16 +79,19 @@ function portfolio({ posts, categories }: Props) {
             filterTech.map((item, index) => {
               return (
                 <button
-                  className="scale-120 pointer-events-auto	 hover:scale-130 group mx-2 flex cursor-pointer flex-col items-center "
+                  className="scale-120 hover:scale-130	 group pointer-events-auto mx-2 flex cursor-pointer flex-col items-center "
                   key={index}
                   data-value={item._id}
                   onClick={removeTechToFilter}
                 >
-                  <img
-                    className="h-8 w-8  transition-transform duration-200 ease-in-out group-hover:animate-bounce"
-                    src={urlFor(item.imageCat).url()!}
-                    alt=""
-                  />
+                  <div className="relative h-8 w-8 transition-transform duration-200 ease-in-out group-hover:animate-bounce">
+                    <Image
+                      src={urlFor(item.imageCat).url()!}
+                      alt=""
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
                   <p className="whitespace-nowrap text-center  tracking-widest opacity-0 transition duration-300 ease-in-out group-hover:opacity-100 dark:text-light">
                     {item.title}
                   </p>
@@ -100,7 +104,7 @@ function portfolio({ posts, categories }: Props) {
         {t('common:Project types')}
       </h1>
       <div className="w-full overflow-scroll">
-        <div className="mx-auto flex w-fit  flex-row items-start justify-center  overflow-auto p-1">
+        <div className="mx-auto flex w-fit  flex-row items-start justify-center  overflow-visible p-1">
           {categories
             .filter(
               (category) =>
@@ -110,21 +114,24 @@ function portfolio({ posts, categories }: Props) {
             .map((item, index) => {
               return (
                 <button
-                  className="pointer-events-auto md:hover:scale-115 group mx-2 flex h-24 cursor-pointer flex-col items-center justify-center"
+                  className="md:hover:scale-115 group pointer-events-auto relative mx-2 flex h-24 cursor-pointer flex-col items-center justify-center"
                   key={index}
                   data-value={item._id}
                   onClick={addTechToFilter}
                 >
                   {item.imageCat && (
-                    <img
-                      className="h-8 w-8 transition-transform duration-200 ease-in-out group-hover:animate-bounce"
-                      src={urlFor(item.imageCat).url()!}
-                      alt=""
-                    />
+                    <div className="relative h-8 w-8 transition-transform duration-200 ease-in-out group-hover:animate-bounce">
+                      <Image
+                        src={urlFor(item.imageCat).url()!}
+                        alt=""
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </div>
                   )}
-                  <p className="whitespace-nowrap text-center tracking-widest opacity-0 transition duration-300 ease-in-out group-hover:opacity-100 dark:text-light">
-                    {t(`common:${item.title}`)}
-                  </p>
+                  <div className="absolute bottom-0 right-0 left-0 flex items-center justify-center whitespace-nowrap opacity-0 transition duration-300 ease-in-out group-hover:opacity-100 dark:text-light">
+                    <p className="text-center">{t(`common:${item.title}`)}</p>
+                  </div>
                 </button>
               )
             })}
@@ -134,7 +141,7 @@ function portfolio({ posts, categories }: Props) {
         {t('common:Techs used')}
       </h1>
       <div className="w-full overflow-scroll">
-        <div className="mx-auto flex w-fit  flex-row items-start justify-center  overflow-auto p-1">
+        <div className="mx-auto flex w-fit  flex-row items-start justify-center  overflow-visible p-1">
           {categories
             .filter(
               (category) =>
@@ -144,21 +151,24 @@ function portfolio({ posts, categories }: Props) {
             .map((item, index) => {
               return (
                 <button
-                  className="pointer-events-auto	md:hover:scale-115 group mx-2 flex h-24 cursor-pointer flex-col items-center justify-center"
+                  className="md:hover:scale-115 group	pointer-events-auto relative mx-2 flex h-24 cursor-pointer flex-col items-center justify-center"
                   key={index}
                   data-value={item._id}
                   onClick={addTechToFilter}
                 >
                   {item.imageCat && (
-                    <img
-                      className="h-8 w-8 transition-transform duration-200 ease-in-out group-hover:animate-bounce"
-                      src={urlFor(item.imageCat).url()!}
-                      alt=""
-                    />
+                    <div className="relative h-8 w-8 transition-transform duration-200 ease-in-out group-hover:animate-bounce">
+                      <Image
+                        src={urlFor(item.imageCat).url()!}
+                        alt=""
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </div>
                   )}
-                  <p className="whitespace-nowrap text-center opacity-0 transition duration-300 ease-in-out group-hover:opacity-100 dark:text-light">
-                    {item.title}
-                  </p>
+                  <div className="absolute bottom-0 right-0 left-0 flex items-center justify-center whitespace-nowrap opacity-0 transition duration-300 ease-in-out group-hover:opacity-100 dark:text-light">
+                    <p className="text-center">{item.title}</p>
+                  </div>
                 </button>
               )
             })}
@@ -170,13 +180,19 @@ function portfolio({ posts, categories }: Props) {
           <Link key={post._id} href={`/project/${post.slug.current}`}>
             <div className="group cursor-pointer overflow-hidden rounded">
               <div className="relative">
-                <img
-                  className="h-60 w-full object-cover transition-transform duration-200 ease-in-out group-hover:scale-105"
-                  src={urlFor(post.mainImage).url()!}
-                  alt=""
-                />
+                <div className="relative h-60 w-full object-cover transition-transform duration-200 ease-in-out group-hover:scale-105">
+                  <Image
+                    src={urlFor(post.mainImage).url()!}
+                    alt=""
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
                 <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center overflow-auto bg-lightlavender/90 opacity-0 transition-transform duration-200 ease-in-out group-hover:scale-105 group-hover:opacity-100 dark:bg-purple-900/90">
-                  <h3 className=" m-auto max-h-[85%] w-5/6 text-center dark:text-light " dangerouslySetInnerHTML={{ __html: post.description }}/>
+                  <h3
+                    className=" m-auto max-h-[85%] w-5/6 text-center dark:text-light "
+                    dangerouslySetInnerHTML={{ __html: post.description }}
+                  />
                 </div>
               </div>
               <div className=" flex justify-between bg-white p-5 dark:bg-pink-700 dark:text-light">

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 type PictureType = {
   linkPicture: string
@@ -14,13 +15,16 @@ function PictureViewer({ linkPicture, note, onChange }: PictureType) {
         onChange(true)
       }}
     >
-      <img
+      <div className="relative w-full m-auto h-full">
+      <Image
         src={linkPicture}
-        alt=""
-        className="max-w-screen m-auto max-h-[96vh] object-scale-down"
+        layout='fill' 
+        objectFit="contain"
+        
       />
+      </div>
       <div className="absolute right-0 bottom-0 flex w-full items-center justify-center">
-        <p className="mb-4 text-center text-lightteal drop-shadow-[3px_3px_1px_white] md:text-3xl md:drop-shadow-[6px_6px_1px_white]">
+        <p className="mb-4 text-center text-lightteal drop-shadow-[3px_3px_1px_white] bg-lightcream md:text-3xl md:drop-shadow-[6px_6px_1px_white]">
           {note}
         </p>
       </div>
