@@ -4,6 +4,7 @@ export interface Post {
   description: string
   href: url
   github: url
+  publishedAt:datetime
   mainImage: {
     asset: {
       url: string

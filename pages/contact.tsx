@@ -12,7 +12,7 @@ function contact() {
 
   const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>)=>{
     event.preventDefault();
-    console.log(process.env.SENDGRID_API_KEY)
+    // console.log(process.env.SENDGRID_API_KEY)
     // const button: HTMLButtonElement = event.currentTarget;
       let data = {
           name,

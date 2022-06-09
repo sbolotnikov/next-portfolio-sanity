@@ -30,10 +30,29 @@ function portfolio({ posts, categories }: Props) {
     let newArr = filterTech.filter((category) => category._id !== ref)
     setFilterTech(newArr)
   }
-  // var arrTotal: string[]=[];
-  // for (let i=0; i<posts.length; i++) {
-  //   arrTotal.push(posts[i].categories.map(category=>category._ref).toString())
-  // }
+  const handleSortUp = (
+    event: React.MouseEvent<HTMLButtonElement>,
+    sort: Boolean
+  ) => {
+    event.preventDefault()
+    console.log(filterProject.map((item)=>item.publishedAt))
+    let postsArr: Post[] =[...filterProject]
+    postsArr.sort((obj1, obj2) => {
+      if (obj1.publishedAt > obj2.publishedAt) {
+          return sort?-1:1;
+      }
+  
+      if (obj1.publishedAt < obj2.publishedAt) {
+          return sort?1:-1;
+      }
+  
+      return 0;
+  });
+  
+  console.log(postsArr)
+  setFilterProject(postsArr)
+
+  }
   useEffect(() => {
     let arrTotal = []
     for (let i = 0; i < posts.length; i++) {
@@ -174,6 +193,23 @@ function portfolio({ posts, categories }: Props) {
             })}
         </div>
       </div>
+      <h1 className="text-md mt-3 text-center font-bold leading-5 dark:text-light">
+        {t('common:Sort')}
+      </h1>
+      <div className="flex w-full items-center justify-center">
+        <button
+          className="m-2 rounded-full bg-lightteal p-2 text-lightlavender transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-lightblue"
+          onClick={(e) => handleSortUp(e, true)}
+        >
+          {t('common:Sortup')}
+        </button>
+        <button
+          className="m-2 rounded-full bg-lightteal p-2 text-lightlavender transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-lightblue"
+          onClick={(e) => handleSortUp(e, false)}
+        >
+          {t('common:Sortdown')}
+        </button>
+      </div>
 
       <div className="grid grid-cols-1 gap-3 p-2 sm:grid-cols-2 md:gap-6 md:p-6 lg:grid-cols-3">
         {filterProject.map((post) => (
@@ -292,7 +328,8 @@ export const getServerSideProps = async () => {
       github,
       description,
       mainImage,
-      categories
+      categories,
+      publishedAt
     }
     
     `

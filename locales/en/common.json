@@ -24,5 +24,8 @@
   "JavaScript":"JavaScript",
   "TypeScript":"TypeScript",
   "Project types":"Project types or used languages:",
-  "Techs used":"Technologies used:"
+  "Techs used":"Technologies used:",
+  "Sort":"Sort projects by creation time",
+  "Sortup":"Latest first",
+  "Sortdown":"Oldest first"
   }
