@@ -25,6 +25,7 @@ export interface Project {
   title: string
   href: url
   github: url
+  youtube: url
   description: string
   mainImage: {
     asset: {

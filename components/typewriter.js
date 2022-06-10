@@ -5,6 +5,7 @@ function Typewriter({ text, speed, delay }) {
   var textArr = text.split('')
   let i = 0
   useEffect(() => {
+    if (text>"")
     setTimeout( ()=> {
       let timerIntervalbefore = setInterval(function () {
         let timerInterval = setInterval(function () {

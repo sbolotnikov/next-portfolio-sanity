@@ -6,10 +6,11 @@ type ScriptingType = {
     stroke:number,
     delay:number,
     height:string,
-    width: string
+    width: string,
+    cutdelay:boolean
   };
   
-    export default function ScriptingSVG({text, duration, height, width,  stroke, delay}:ScriptingType) {
+    export default function ScriptingSVG({text, duration, height, width,  stroke, delay, cutdelay}:ScriptingType) {
         let generatedSVG="";  
         const [svgElement,setSVGElement]= useState("")   
   let fontModule=[
@@ -653,7 +654,7 @@ type ScriptingType = {
      let letter=fontModule.filter(item=>item.letter==text[i])[0];
      generatedSVG+=`
      <g transform="translate(${offset}, 0)">
-      <path  style="stroke-dasharray:${letter.strokeDasharray}; stroke-dashoffset:${letter.strokeDasharray}; animation: dash ${duration/text.length}s linear ${delay+duration/text.length*i}s  forwards" 
+      <path  style="stroke-dasharray:${letter.strokeDasharray}; stroke-dashoffset:${letter.strokeDasharray}; animation: dash ${duration/text.length}s linear ${cutdelay?0:delay+duration/text.length*i}s  forwards" 
       ${letter.path}/> ${letter.extraPath}
       </g>
      `

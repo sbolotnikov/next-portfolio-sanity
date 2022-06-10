@@ -28,6 +28,11 @@ export default {
       type: 'url',
     },
     {
+      title: 'YouTube Video',
+      name: 'youtube',
+      type: 'url',
+    },
+    {
       title: 'Description',
       name: 'description',
       type: 'text',
