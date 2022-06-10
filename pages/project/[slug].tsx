@@ -160,7 +160,7 @@ const Project = ({ project }: Props) => {
           </h1>
           <h1 className=" text-md flex w-full max-w-md flex-col text-left font-bold leading-5 dark:text-light">
             {t('project:AdditinalTech')}:
-            <div className="flex flex-row items-start justify-start overflow-auto p-2 font-normal ">
+            <div className="flex flex-row items-start justify-start flex-wrap p-2 font-normal ">
               {project[0].categories
                 .filter(
                   (category) =>
