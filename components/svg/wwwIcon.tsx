@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type ClassnameType = {
     classText: string,
     link: string
@@ -5,6 +7,7 @@ type ClassnameType = {
 function WwwIcon({classText, link}:ClassnameType) {
 
   return (
+   <Link href={link}>  
     <svg
     className={classText}
       xmlns="http://www.w3.org/2000/svg"
@@ -32,6 +35,7 @@ function WwwIcon({classText, link}:ClassnameType) {
 	c13.482,32.637,31.076,58.634,47.752,78.034C117.059,421.262,86.318,394.148,64.692,360.51z M336.576,438.54
 	c16.672-19.398,34.263-45.395,47.742-78.03h40.99C403.684,394.146,372.945,421.258,336.576,438.54z"/>
     </svg>
+    </Link> 
   )
 }
 
