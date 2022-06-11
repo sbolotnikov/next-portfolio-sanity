@@ -32,5 +32,8 @@
   "Email success":"Email was send successfully",
   "Return":"Return",
   "Email fail":"Your email was not delivered!",
-  "Warning":"Warning!"
+  "Warning":"Warning!",
+  "Name too Short":"Name must be more than 2 letters",
+  "Message too Short":"Message must be more than 4 symbols",
+  "Email validation Error":"Your email is not valid. Try again"
   }

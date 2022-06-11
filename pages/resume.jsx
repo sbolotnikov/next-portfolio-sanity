@@ -40,7 +40,7 @@ function resume() {
             rel="noopener noreferrer"
             download
           >
-            <button className="rounded-full bg-lightteal text-lightlavender p-2 transition delay-150 m-10 md:m-2 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-lightblue">
+            <button className="rounded-full bg-lightblue text-lightlavender p-2 transition delay-150 m-10 md:m-2 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-lightblue">
               {t('common:Download')}
             </button>
           </a>
