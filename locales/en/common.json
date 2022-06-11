@@ -27,5 +27,10 @@
   "Techs used":"Technologies used:",
   "Sort":"Sort projects by creation time",
   "Sortup":"Latest first",
-  "Sortdown":"Oldest first"
+  "Sortdown":"Oldest first",
+  "Message":"Message",
+  "Email success":"Email was send successfully",
+  "Return":"Return",
+  "Email fail":"Your email was not delivered!",
+  "Warning":"Warning!"
   }
