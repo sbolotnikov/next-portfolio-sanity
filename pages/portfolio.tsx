@@ -6,6 +6,7 @@ import useTranslation from 'next-translate/useTranslation'
 import NavItem from '../components/Navbar/navItem'
 import Image from 'next/image'
 import WwwIcon from '../components/svg/wwwIcon'
+import Head from 'next/head'
 
 interface Props {
   posts: [Post]
@@ -86,6 +87,10 @@ function portfolio({ posts, categories }: Props) {
   }, [filterTech])
   return (
     <>
+      <Head>
+      <title>{t('common:Projects')}</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
       <h1 className=" text-center text-3xl font-bold dark:text-light">
         {t('common:Portfolio')}
       </h1>
