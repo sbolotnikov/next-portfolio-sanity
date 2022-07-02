@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+import {useEffect} from 'react'
 type PictureType = {
   linkPicture: string
   note: string
@@ -8,6 +8,20 @@ type PictureType = {
 }
 function PictureViewer({ linkPicture, note, isVideo, onChange }: PictureType) {
   const el = document.querySelector('#mainPage')
+  const lastY=el?.scrollTop
+
+  useEffect(() => {
+      const handleScroll: EventListener = (event: Event) => {
+          (event.target as HTMLElement).scrollTop=lastY?lastY:0;
+      };    
+
+      el?.addEventListener('scroll', handleScroll);
+  
+      // 👇️ remove the event listener when component unmounts
+      return () => {
+        el?.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
   return (
     <div
       className="absolute left-0 z-[1001] flex h-screen w-screen items-center justify-center bg-slate-500/70 backdrop-blur-md"
