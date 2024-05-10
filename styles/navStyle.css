@@ -7,81 +7,75 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 1.5rem 0 0;
- 
+
   z-index: 5;
 }
 
-
-
-
-
 /*
-    This is a single item ( <li> ) in the list
-    */
+      This is a single item ( <li> ) in the list
+      */
 .navbar__item {
   white-space: nowrap;
-  
 }
 
 .navbar__right_span {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   height: 3rem;
   position: absolute;
   right: 0vw;
-  top:0;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 /*
-  This is the container for all the navbar links ( <ul> )
-  */
+    This is the container for all the navbar links ( <ul> )
+    */
 .navbar__list {
-display: flex;
-justify-content: space-between;
-align-items: center;
-list-style: none;
-padding: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 3.5rem;
 }
 .navbar__item {
   margin-right: 1.5rem;
 }
 
 /* .navbar__menu {
-  display: none;
-  cursor: pointer;
-  height: 1.5rem;
-  width: 2rem;
-}
-.navbar__menu_grid {
-    margin:0 .25rem 0 .25rem;
+    display: none;
     cursor: pointer;
     height: 1.5rem;
-    width: 1.5rem;
-  } */
-
+    width: 2rem;
+  }
+  .navbar__menu_grid {
+      margin:0 .25rem 0 .25rem;
+      cursor: pointer;
+      height: 1.5rem;
+      width: 1.5rem;
+    } */
 
 @media screen and (max-width: 767px) {
- .navbar{
-  padding: 0 1.5rem 0 0;
-  z-index: 100;
- }
+  .navbar {
+    padding: 0 1.5rem 0 0;
+    z-index: 100;
+  }
   .navbar__list {
     display: flex;
     flex-direction: column;
     padding: min(40vh, 10rem) 0rem;
     height: 100vh;
-    left:0%;
-    top:0;
-    
+    left: 0%;
+    top: 0;
+
     list-style: none;
     position: absolute;
   }
- 
+
   /* .navbar__menu {
-    display: block;
-    z-index: 1000;
-  } */
+      display: block;
+      z-index: 1000;
+    } */
 
   .navbar__item {
     align-self: flex-start;
@@ -89,7 +83,7 @@ padding: 3.5rem;
     align-items: center;
     flex: 1;
     border-radius: 0 3rem 3rem 0;
-    margin:1.25rem 0;
+    margin: 1.25rem 0;
     z-index: 100;
   }
 
@@ -97,7 +91,6 @@ padding: 3.5rem;
     position: absolute;
     right: 0vw;
   }
-
 }
 @keyframes dashout {
   0% {
